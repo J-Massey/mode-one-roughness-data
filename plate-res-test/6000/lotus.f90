@@ -11,7 +11,7 @@ program swimming_plate
 ! -- Physical parameters
   real,parameter     :: Re = 6000
 !
-  real,parameter     :: c=1024.0, nu=c/Re
+    real,parameter     :: c=2048, nu=c/Re
   real, parameter    :: finish=7
   integer            :: b(3) = [8,8,1]
 !
