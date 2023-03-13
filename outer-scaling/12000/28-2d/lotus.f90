@@ -1,5 +1,4 @@
 program swimming_plate
-  !
     use bodyMod,    only: body
     use fluidMod,   only: fluid
     use mympiMod,   only: init_mympi,mympi_end,mympi_rank
@@ -10,23 +9,23 @@ program swimming_plate
     implicit none
   !
   ! -- Physical parameters
-    real,parameter     :: Re = 1.2e4
+    real,parameter     :: Re = 12000
   !
-    real,parameter     :: c=1020.0, nu=c/Re
-    real, parameter    :: finish=8
+    real,parameter     :: c=1024.0, nu=c/Re
+    real, parameter    :: finish=7
     integer            :: b(3) = [16,16,1]
   !
   ! -- Hyperparameters
     real, parameter    :: thicc=0.03*c
-    real, parameter    :: A = 0.1*c, St_d = 0.3, k_x=20.5, k_z=20.0, h_roughness=0.01
+    real, parameter    :: A = 0.1*c, St_d = 0.3, k_x=0.0, k_z=28.0, h_roughness=0.0
     real, parameter    :: a_coeff = 0.28, &
                           b_coeff = 0.13, &
                           c_coeff = 0.05, &
-                          k_coeff = 0.7753212427801283, &
+                          k_coeff = 0.732092124348954, &
                           f = St_d/(2.*A)
   !
   ! -- Dimensions
-    integer            :: n(3), ndims=3
+    integer            :: n(3), ndims=2
   !
   ! -- Setup solver
     logical            :: there = .false., root, p(3) = [.FALSE.,.FALSE.,.TRUE.]
@@ -37,7 +36,8 @@ program swimming_plate
   !
   !
   ! -- Outputs
-    real            :: dt, t, pforce(3), vforce(3), ppower(3)
+    real            :: dt, t, pforce(3),vforce(3),vforce1(3),vforce2(3),ppower
+    real            :: enstrophy_body,enstrophy_wake,enstrophy,tke_body,tke_wake,tke
   !
   ! -- Initialize
     call init_mympi(ndims,set_blocks=b(1:ndims),set_periodic=p(1:ndims))
@@ -49,7 +49,7 @@ program swimming_plate
     if(ndims==2) then
       z = 0.0
     else
-      z = 16./(k_z*4.)
+      z = 0.03125
     end if
     m = [1.5,1.5, z]
     n = composite(c*m,prnt=root)
@@ -74,24 +74,29 @@ program swimming_plate
       dt = flow%dt
       call geom%update(t+dt) ! update geom
       call flow%update(geom)              ! update N-S
-      ! if((t>finish/f-20).and.(t<finish/f-5)) call avrg%add(flow)
-      ! if(t>finish/f-5) call avrg%add(flow, rms=.true., slice=.true.)
 
-      write(9,'(f10.4,f8.4,4e16.8,4e16.8,4e16.8,4e16.8,4e16.8,4e16.8,&
-            4e16.8,4e16.8,4e16.8,4e16.8,4e16.8,4e16.8,4e16.8,4e16.8)')&
-            t*f,dt,pforce,ppower,vforce
+      pforce = 2.*geom%pforce(flow%pressure)/(c*n(3)*xg(3)%h)
+      ppower = 2.*geom%ppower(flow%pressure)/(c*n(3)*xg(3)%h)
+      vforce = 2.*nu*geom%vforce(flow%velocity)/(c*n(3)*xg(3)%h)
+      vforce1 = 2.*nu*geom%vforce_f(flow%velocity)/(c*n(3)*xg(3)%h)
+      vforce2 = 2.*nu*geom%vforce_s(flow%velocity)/(c*n(3)*xg(3)%h)
+      enstrophy_body = flow%velocity%enstrophy(lcorn=c*[-0.25,-0.5,0.],ucorn=c*[2.0,0.5,0.125])
+      enstrophy_wake = flow%velocity%enstrophy(lcorn=c*[1.1,-0.5,0.],ucorn=c*[2.1,0.5,0.125])
+      enstrophy = flow%velocity%enstrophy()
+      tke_body = flow%velocity%tke(lcorn=c*[-0.25,-0.5,0.],ucorn=c*[2.0,0.5,0.125])
+      tke_wake = flow%velocity%tke(lcorn=c*[1.1,-0.5,0.],ucorn=c*[2.1,0.5,0.125])
+      tke = flow%velocity%tke()
+      
+      write(9,'(f10.4,f8.4,4e16.8,4e16.8,4e16.8,4e16.8,4e16.8,4e16.8)')&
+            t*f,flow%dt,pforce,ppower,vforce,vforce1,vforce2,&
+            enstrophy_body,enstrophy_wake,tke_body,tke_wake,enstrophy,tke
 
-      pforce = 2.*geom%pforce(flow%pressure)/(A*n(3)*xg(3)%h)
-      ppower = 2.*geom%ppower(flow%pressure)/(A*n(3)*xg(3)%h)
-      vforce = 2.*nu*geom%vforce_f(flow%velocity)/(A*n(3)*xg(3)%h)
-
-      if((mod(t,1./f)<dt).and.(root)) print "('Time:',f15.3,'. Thrust:',f15.3,3f12.6)",&
-      t*f, (pforce(1)+vforce(1))
+      if((mod(t,1./f)<flow%dt).and.(root)) print "('Time:',f15.3)",t*f
 
       inquire(file='../.kill', exist=there)
       if (there) exit time_loop
 
-      if((t>(finish-4)/f).and.(mod(t,0.1/f)<dt)) call flow%write(geom, write_vtr=.false.)
+      ! if((t>(finish-4)/f).and.(mod(t,0.1/f)<dt)) call flow%write(geom, write_vtr=.false.)
 
     end do time_loop
 
