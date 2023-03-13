@@ -25,7 +25,7 @@ plt.rcParams["font.size"] = "10.5"
 
 
 def plot_domain_test():
-    fig, axes = plt.subplots(3, figsize=(5, 1.))
+    fig, axes = plt.subplots(3, figsize=(5, 3.))
     axes[-1].set_xlabel(f"$ t $")
     axes[1].set_ylabel(r"$ C_{T} $")
     [ax.set_xticklabels([]) for ax in axes[:-1]]
@@ -33,13 +33,13 @@ def plot_domain_test():
 
 
     domain_set(axes[0], 6000, sns.color_palette('colorblind')[0])
-    domain_set(axes[1], 12000, sns.color_palette("Greens",2)[1])
-    # domain_set(axes[2], 24000, sns.color_palette("Blues",2)[1])
+    domain_set(axes[1], 12000, sns.color_palette('colorblind')[1])
+    domain_set(axes[2], 24000, sns.color_palette('colorblind')[2])
 
     legend_elements1 = [
         Line2D([0], [0], ls="-", label=r"$Re=5,000$", c=sns.color_palette('colorblind')[0]),
-        Line2D([0], [0], ls="-", label=r"$Re=12,000$", c=sns.color_palette("Greens",2)[1]),
-        Line2D([0], [0], ls="-", label=r"$Re=24,000$", c=sns.color_palette("Blues",2)[1]),
+        Line2D([0], [0], ls="-", label=r"$Re=12,000$", c=sns.color_palette('colorblind')[1]),
+        Line2D([0], [0], ls="-", label=r"$Re=24,000$", c=sns.color_palette('colorblind')[2]),
     ]
     legend_elements2 = [
         Line2D([0], [0], ls="-", label="Domain 1", c="k"),
