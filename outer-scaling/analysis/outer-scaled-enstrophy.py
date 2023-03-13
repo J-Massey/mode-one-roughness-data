@@ -16,6 +16,21 @@ import scienceplots
 plt.style.use(["science"])
 plt.rcParams["font.size"] = "10.5"
 
+def avg_enstrophy_scaling():
+    return (
+        1 / 0.1                # A
+        / (1.5 * 1024)         # Nx
+        / (1.5 * 1024)         # Ny
+        / (0.03125 * 1024)  # z domain
+      )
+
+def SA_enstrophy_scaling(span=0.03125):
+    return (
+        1 / 0.1             # A
+        / (1 * 1024/4.)     # L
+        / (span * 1024)  # span
+      )
+
 
 def plot_enstrophy():
     fig, ax = plt.subplots(figsize=(2.5, 2.5))
@@ -47,22 +62,22 @@ def plot_enstrophy():
 
     k_lam = np.arange(4, 32, 4)
 
-    ax.plot(
-        interp1d(lam, zeta)(1 / k_lam),
-        get_enstrophy(k_lam, 12000)
-        / 0.1
-        / (1024 * 0.25 / 4.0)
-        / (1024 / 4),  # Spanwise avg
-        markerfacecolor="None",
-        marker="P",
-        color=sns.color_palette("colorblind")[1],
-        # alpha=0.7,
-        ls="-",
-    )
+    zet = np.append(1/0.94, interp1d(lam, zeta)(1 / k_lam))
+    enstrophy = np.append(get_enstrophy(np.array([0]), 12000)*SA_enstrophy_scaling(1/1024), get_enstrophy(k_lam, 12000) * SA_enstrophy_scaling(0.03125))
 
+    enstrophy_2d = np.append(get_enstrophy(np.array([0]), 12000, '-2d')*SA_enstrophy_scaling(1/1024), get_enstrophy(k_lam, 12000, '-2d') * SA_enstrophy_scaling(1/1024))
+
+    # ax.plot(
+    #     zet,
+    #     enstrophy/enstrophy_2d,
+    #     markerfacecolor="None",
+    #     marker="P",
+    #     color=sns.color_palette("colorblind")[1],
+    #     # alpha=0.7,
+    #     ls="-",
+    # )
     ax.plot(
-        interp1d(lam, zeta)(1 / k_lam),
-        get_enstrophy(k_lam, 12000, "-2d") / 0.1 / (1024 / 4),
+        zet, enstrophy_2d,
         markerfacecolor="None",
         marker="P",
         color="grey",
@@ -150,7 +165,7 @@ def plot_enstrophy():
 
 
 def plot_enstrophy_diff():
-    fig, ax = plt.subplots(figsize=(2.5, 2.5))
+    fig, ax = plt.subplots(figsize=(4.5, 2.5))
     ax.set_xlabel(r"$\lambda/\delta$")
     ax.set_ylabel(r"$\Delta E/E_{s}$")
 
@@ -246,7 +261,7 @@ def get_enstrophy(lam, re, d=""):
         t, p = read_forces(
             f"{Path.cwd().parent}/{re}/{lam[idx]}{d}/fort.9",
             interest="E",
-            direction="b",
+            direction="",
         )
         thrust[idx] = np.mean(p[t > 4])
     return thrust
