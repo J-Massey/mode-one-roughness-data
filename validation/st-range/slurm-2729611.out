@@ -1,0 +1,20 @@
+==============================================================================
+Running epilogue script on apricot03.
+
+Submit time  : 2023-03-07T17:12:44
+Start time   : 2023-03-07T17:12:45
+End time     : 2023-03-07T17:20:29
+Elapsed time : 00:07:44 (Timelimit=04:00:00)
+
+Job ID: 2729611
+Cluster: i5
+User/Group: ml4n17/mm
+State: NODE_FAIL (exit code 0)
+Nodes: 1
+Cores per node: 64
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 08:14:56 core-walltime
+Job Wall-clock time: 00:07:44
+Memory Utilized: 0.00 MB (estimated maximum)
+Memory Efficiency: 0.00% of 245.00 GB (3.83 GB/core)
+

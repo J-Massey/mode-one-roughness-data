@@ -1,0 +1,319 @@
+Running SLURM prolog script on ruby049.cluster.local
+===============================================================================
+Job started on Tue Mar  7 18:09:13 GMT 2023
+Job ID          : 2729724
+Job name        : kin_test
+WorkDir         : /mainfs/scratch/ml4n17/jm/1_3
+Command         : /mainfs/scratch/ml4n17/jm/1_3/jobby
+Partition       : amd
+Num hosts       : 1
+Num cores       : 64
+Num of tasks    : 64
+Hosts allocated : ruby049
+Job Output Follows ...
+===============================================================================
+Starting calculation at Tue Mar  7 18:09:13 GMT 2023
+---------------------------------------------------------------
+make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
+make: `libgeom.a' is up to date.
+make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
+make: `libfluid.a' is up to date.
+make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -I/home/ml4n17/Lotus/solver/src/oop -I/home/ml4n17/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/ml4n17/Lotus/solver/src/oop/. -L/home/ml4n17/Lotus/solver/src/geom/. -lfluid -lgeom
+ Setting up the grid, body and fluid
+ -----------------------------------
+composite(1536.0)=1536
+  products :3*2**9
+composite(1536.0)=1536
+  products :3*2**9
+composite(.0)=1
+ Stretched grid sections:
+  negative: r= 0.6%, h_max=12.5
+  positive: r= 0.6%, h_max=9.9
+ grid symmetry:  F
+ Stretched grid sections:
+  negative: r= 0.4%, h_max=6.0
+  positive: r= 0.4%, h_max=6.0
+ grid symmetry:  T
+ Starting time update loop
+ -----------------------------------
+Time:          0.000. Thrust:         -6.550
+Time:          1.000. Thrust:         -0.119
+Time:          2.000. Thrust:         -0.125
+Time:          3.000. Thrust:         -0.113
+Time:          4.000. Thrust:         -0.103
+Time:          5.000. Thrust:         -0.120
+Time:          6.000. Thrust:         -0.112
+Time:          7.000. Thrust:         -0.077
+ Loop complete: writing restart files and exiting
+ -----------------------------------
+make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
+make: `libgeom.a' is up to date.
+make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
+make: `libfluid.a' is up to date.
+make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -I/home/ml4n17/Lotus/solver/src/oop -I/home/ml4n17/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/ml4n17/Lotus/solver/src/oop/. -L/home/ml4n17/Lotus/solver/src/geom/. -lfluid -lgeom
+ Setting up the grid, body and fluid
+ -----------------------------------
+composite(1536.0)=1536
+  products :3*2**9
+composite(1536.0)=1536
+  products :3*2**9
+composite(.0)=1
+ Stretched grid sections:
+  negative: r= 0.6%, h_max=12.5
+  positive: r= 0.6%, h_max=9.9
+ grid symmetry:  F
+ Stretched grid sections:
+  negative: r= 0.4%, h_max=6.0
+  positive: r= 0.4%, h_max=6.0
+ grid symmetry:  T
+ Starting time update loop
+ -----------------------------------
+Time:          0.000. Thrust:         -1.730
+Time:          1.000. Thrust:         -0.036
+Time:          2.000. Thrust:         -0.026
+Time:          3.000. Thrust:         -0.034
+Time:          4.000. Thrust:         -0.023
+Time:          5.000. Thrust:         -0.047
+Time:          6.000. Thrust:         -0.029
+Time:          7.000. Thrust:         -0.037
+ Loop complete: writing restart files and exiting
+ -----------------------------------
+make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
+make: `libgeom.a' is up to date.
+make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
+make: `libfluid.a' is up to date.
+make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -I/home/ml4n17/Lotus/solver/src/oop -I/home/ml4n17/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/ml4n17/Lotus/solver/src/oop/. -L/home/ml4n17/Lotus/solver/src/geom/. -lfluid -lgeom
+ Setting up the grid, body and fluid
+ -----------------------------------
+composite(1536.0)=1536
+  products :3*2**9
+composite(1536.0)=1536
+  products :3*2**9
+composite(.0)=1
+ Stretched grid sections:
+  negative: r= 0.6%, h_max=12.5
+  positive: r= 0.6%, h_max=9.9
+ grid symmetry:  F
+ Stretched grid sections:
+  negative: r= 0.4%, h_max=6.0
+  positive: r= 0.4%, h_max=6.0
+ grid symmetry:  T
+ Starting time update loop
+ -----------------------------------
+Time:          0.000. Thrust:          2.894
+Time:          1.000. Thrust:          0.067
+Time:          2.000. Thrust:          0.071
+Time:          4.001. Thrust:          0.072
+Time:          5.000. Thrust:          0.070
+Time:          6.000. Thrust:          0.070
+Time:          7.001. Thrust:          0.077
+ Loop complete: writing restart files and exiting
+ -----------------------------------
+make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
+make: `libgeom.a' is up to date.
+make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
+make: `libfluid.a' is up to date.
+make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -I/home/ml4n17/Lotus/solver/src/oop -I/home/ml4n17/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/ml4n17/Lotus/solver/src/oop/. -L/home/ml4n17/Lotus/solver/src/geom/. -lfluid -lgeom
+ Setting up the grid, body and fluid
+ -----------------------------------
+composite(1536.0)=1536
+  products :3*2**9
+composite(1536.0)=1536
+  products :3*2**9
+composite(.0)=1
+ Stretched grid sections:
+  negative: r= 0.6%, h_max=12.5
+  positive: r= 0.6%, h_max=9.9
+ grid symmetry:  F
+ Stretched grid sections:
+  negative: r= 0.4%, h_max=6.0
+  positive: r= 0.4%, h_max=6.0
+ grid symmetry:  T
+ Starting time update loop
+ -----------------------------------
+Time:          0.000. Thrust:          7.510
+Time:          1.000. Thrust:          0.187
+Time:          2.000. Thrust:          0.180
+Time:          3.000. Thrust:          0.201
+Time:          4.000. Thrust:          0.206
+Time:          5.001. Thrust:          0.203
+Time:          6.000. Thrust:          0.201
+Time:          7.000. Thrust:          0.199
+ Loop complete: writing restart files and exiting
+ -----------------------------------
+make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
+make: `libgeom.a' is up to date.
+make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
+make: `libfluid.a' is up to date.
+make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -I/home/ml4n17/Lotus/solver/src/oop -I/home/ml4n17/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/ml4n17/Lotus/solver/src/oop/. -L/home/ml4n17/Lotus/solver/src/geom/. -lfluid -lgeom
+ Setting up the grid, body and fluid
+ -----------------------------------
+composite(1536.0)=1536
+  products :3*2**9
+composite(1536.0)=1536
+  products :3*2**9
+composite(.0)=1
+ Stretched grid sections:
+  negative: r= 0.6%, h_max=12.5
+  positive: r= 0.6%, h_max=9.9
+ grid symmetry:  F
+ Stretched grid sections:
+  negative: r= 0.4%, h_max=6.0
+  positive: r= 0.4%, h_max=6.0
+ grid symmetry:  T
+ Starting time update loop
+ -----------------------------------
+Time:          0.000. Thrust:         12.107
+Time:          1.001. Thrust:          0.306
+Time:          2.000. Thrust:          0.319
+Time:          3.000. Thrust:          0.309
+Time:          4.000. Thrust:          0.309
+Time:          5.000. Thrust:          0.306
+Time:          6.000. Thrust:          0.302
+Time:          6.001. Thrust:          0.304
+Time:          7.000. Thrust:          0.302
+ Loop complete: writing restart files and exiting
+ -----------------------------------
+make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
+make: `libgeom.a' is up to date.
+make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
+make: `libfluid.a' is up to date.
+make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -I/home/ml4n17/Lotus/solver/src/oop -I/home/ml4n17/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/ml4n17/Lotus/solver/src/oop/. -L/home/ml4n17/Lotus/solver/src/geom/. -lfluid -lgeom
+ Setting up the grid, body and fluid
+ -----------------------------------
+composite(1536.0)=1536
+  products :3*2**9
+composite(1536.0)=1536
+  products :3*2**9
+composite(.0)=1
+ Stretched grid sections:
+  negative: r= 0.6%, h_max=12.5
+  positive: r= 0.6%, h_max=9.9
+ grid symmetry:  F
+ Stretched grid sections:
+  negative: r= 0.4%, h_max=6.0
+  positive: r= 0.4%, h_max=6.0
+ grid symmetry:  T
+ Starting time update loop
+ -----------------------------------
+Time:          0.000. Thrust:         16.818
+Time:          1.000. Thrust:          0.468
+Time:          2.001. Thrust:          0.479
+Time:          3.000. Thrust:          0.447
+Time:          4.000. Thrust:          0.463
+Time:          5.000. Thrust:          0.452
+Time:          6.001. Thrust:          0.437
+Time:          7.000. Thrust:          0.468
+ Loop complete: writing restart files and exiting
+ -----------------------------------
+Number of proccessors :64
+Run folder            :/mainfs/scratch/ml4n17/jm/1_3/0.15411199999999997
+No read folder
+Folder /mainfs/scratch/ml4n17/jm/1_3/0.15411199999999997 exists!
+Moving contents to trash
+Setting up in /mainfs/scratch/ml4n17/jm/1_3/0.15411199999999997
+No postprocessing set up
+No stopping criteria, the simulation will run its course
+Making executable 
+Finished executable 
+Running executable 
+Run all python files for postprocessing
+Popping back up
+Number of proccessors :64
+Run folder            :/mainfs/scratch/ml4n17/jm/1_3/0.20731733333333338
+No read folder
+Creating /mainfs/scratch/ml4n17/jm/1_3/0.20731733333333338
+Setting up in /mainfs/scratch/ml4n17/jm/1_3/0.20731733333333338
+No postprocessing set up
+No stopping criteria, the simulation will run its course
+Making executable 
+Finished executable 
+Running executable 
+Run all python files for postprocessing
+Popping back up
+Number of proccessors :64
+Run folder            :/mainfs/scratch/ml4n17/jm/1_3/0.25868800000000003
+No read folder
+Creating /mainfs/scratch/ml4n17/jm/1_3/0.25868800000000003
+Setting up in /mainfs/scratch/ml4n17/jm/1_3/0.25868800000000003
+No postprocessing set up
+No stopping criteria, the simulation will run its course
+Making executable 
+Finished executable 
+Running executable 
+Run all python files for postprocessing
+Popping back up
+Number of proccessors :64
+Run folder            :/mainfs/scratch/ml4n17/jm/1_3/0.31009362717481354
+No read folder
+Creating /mainfs/scratch/ml4n17/jm/1_3/0.31009362717481354
+Setting up in /mainfs/scratch/ml4n17/jm/1_3/0.31009362717481354
+No postprocessing set up
+No stopping criteria, the simulation will run its course
+Making executable 
+Finished executable 
+Running executable 
+Run all python files for postprocessing
+Popping back up
+Number of proccessors :64
+Run folder            :/mainfs/scratch/ml4n17/jm/1_3/0.36142933333333327
+No read folder
+Creating /mainfs/scratch/ml4n17/jm/1_3/0.36142933333333327
+Setting up in /mainfs/scratch/ml4n17/jm/1_3/0.36142933333333327
+No postprocessing set up
+No stopping criteria, the simulation will run its course
+Making executable 
+Finished executable 
+Running executable 
+Run all python files for postprocessing
+Popping back up
+Number of proccessors :64
+Run folder            :/mainfs/scratch/ml4n17/jm/1_3/0.4141360994200497
+No read folder
+Creating /mainfs/scratch/ml4n17/jm/1_3/0.4141360994200497
+Setting up in /mainfs/scratch/ml4n17/jm/1_3/0.4141360994200497
+No postprocessing set up
+No stopping criteria, the simulation will run its course
+Making executable 
+Finished executable 
+Running executable 
+Run all python files for postprocessing
+Popping back up
+==============================================================================
+Running epilogue script on ruby049.
+
+Submit time  : 2023-03-07T17:59:17
+Start time   : 2023-03-07T18:09:12
+End time     : 2023-03-07T19:04:20
+Elapsed time : 00:55:08 (Timelimit=04:00:00)
+
+Job ID: 2729724
+Cluster: i5
+User/Group: ml4n17/mm
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 64
+CPU Utilized: 2-09:36:12
+CPU Efficiency: 97.95% of 2-10:48:32 core-walltime
+Job Wall-clock time: 00:55:08
+Memory Utilized: 3.37 GB
+Memory Efficiency: 1.50% of 225.00 GB
+

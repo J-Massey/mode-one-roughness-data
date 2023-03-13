@@ -1,18 +1,18 @@
-Running SLURM prolog script on ruby071.cluster.local
+Running SLURM prolog script on ruby002.cluster.local
 ===============================================================================
-Job started on Mon Feb 27 13:46:04 GMT 2023
-Job ID          : 2648001
-Job name        : 24k-plate-res
-WorkDir         : /ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/24000
-Command         : /ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/24000/subOpt
+Job started on Mon Mar 13 09:49:14 GMT 2023
+Job ID          : 2790846
+Job name        : 48k-plate-res
+WorkDir         : /ssdfs/users/jmom1n15/mode-one-roughness/plate-res-test/48000
+Command         : /ssdfs/users/jmom1n15/mode-one-roughness/plate-res-test/48000/subOpt
 Partition       : amd
 Num hosts       : 1
 Num cores       : 64
 Num of tasks    : 64
-Hosts allocated : ruby071
+Hosts allocated : ruby002
 Job Output Follows ...
 ===============================================================================
-Starting calculation at Mon Feb 27 13:46:04 GMT 2023
+Starting calculation at Mon Mar 13 09:49:15 GMT 2023
 ---------------------------------------------------------------
 make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
 make: `libgeom.a' is up to date.
@@ -40,11 +40,12 @@ composite(.0)=1
  Starting time update loop
  -----------------------------------
 Time:          0.000
-Time:          1.008
-Time:          2.006
-Time:          3.009
-Time:          4.007
-Time:          5.007
+Time:          1.004
+Time:          2.000
+Time:          3.005
+Time:          4.009
+Time:          5.002
+Time:          6.004
  Loop complete: writing restart files and exiting
  -----------------------------------
 make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
@@ -74,10 +75,11 @@ composite(.0)=1
  -----------------------------------
 Time:          0.000
 Time:          1.001
-Time:          2.001
-Time:          3.000
-Time:          4.001
-Time:          5.004
+Time:          2.003
+Time:          3.002
+Time:          4.003
+Time:          5.000
+Time:          6.003
  Loop complete: writing restart files and exiting
  -----------------------------------
 make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
@@ -111,6 +113,7 @@ Time:          2.001
 Time:          3.001
 Time:          4.001
 Time:          5.001
+Time:          6.001
  Loop complete: writing restart files and exiting
  -----------------------------------
 make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
@@ -144,14 +147,14 @@ Time:          2.000
 Time:          3.000
 Time:          4.000
 Time:          5.000
+Time:          6.000
  Loop complete: writing restart files and exiting
  -----------------------------------
 Number of proccessors :64
-Run folder            :/ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/24000/256
+Run folder            :/ssdfs/users/jmom1n15/mode-one-roughness/plate-res-test/48000/256
 No read folder
-Folder /ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/24000/256 exists!
-Moving contents to trash
-Setting up in /ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/24000/256
+Creating /ssdfs/users/jmom1n15/mode-one-roughness/plate-res-test/48000/256
+Setting up in /ssdfs/users/jmom1n15/mode-one-roughness/plate-res-test/48000/256
 No postprocessing set up
 No stopping criteria, the simulation will run its course
 Making executable 
@@ -160,11 +163,10 @@ Running executable
 Run all python files for postprocessing
 Popping back up
 Number of proccessors :64
-Run folder            :/ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/24000/512
+Run folder            :/ssdfs/users/jmom1n15/mode-one-roughness/plate-res-test/48000/512
 No read folder
-Folder /ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/24000/512 exists!
-Moving contents to trash
-Setting up in /ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/24000/512
+Creating /ssdfs/users/jmom1n15/mode-one-roughness/plate-res-test/48000/512
+Setting up in /ssdfs/users/jmom1n15/mode-one-roughness/plate-res-test/48000/512
 No postprocessing set up
 No stopping criteria, the simulation will run its course
 Making executable 
@@ -173,11 +175,10 @@ Running executable
 Run all python files for postprocessing
 Popping back up
 Number of proccessors :64
-Run folder            :/ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/24000/1024
+Run folder            :/ssdfs/users/jmom1n15/mode-one-roughness/plate-res-test/48000/1024
 No read folder
-Folder /ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/24000/1024 exists!
-Moving contents to trash
-Setting up in /ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/24000/1024
+Creating /ssdfs/users/jmom1n15/mode-one-roughness/plate-res-test/48000/1024
+Setting up in /ssdfs/users/jmom1n15/mode-one-roughness/plate-res-test/48000/1024
 No postprocessing set up
 No stopping criteria, the simulation will run its course
 Making executable 
@@ -186,11 +187,10 @@ Running executable
 Run all python files for postprocessing
 Popping back up
 Number of proccessors :64
-Run folder            :/ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/24000/2048
+Run folder            :/ssdfs/users/jmom1n15/mode-one-roughness/plate-res-test/48000/2048
 No read folder
-Folder /ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/24000/2048 exists!
-Moving contents to trash
-Setting up in /ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/24000/2048
+Creating /ssdfs/users/jmom1n15/mode-one-roughness/plate-res-test/48000/2048
+Setting up in /ssdfs/users/jmom1n15/mode-one-roughness/plate-res-test/48000/2048
 No postprocessing set up
 No stopping criteria, the simulation will run its course
 Making executable 
@@ -199,22 +199,22 @@ Running executable
 Run all python files for postprocessing
 Popping back up
 ==============================================================================
-Running epilogue script on ruby071.
+Running epilogue script on ruby002.
 
-Submit time  : 2023-02-27T13:45:29
-Start time   : 2023-02-27T13:46:03
-End time     : 2023-02-27T14:16:21
-Elapsed time : 00:30:18 (Timelimit=02:00:00)
+Submit time  : 2023-03-13T08:39:38
+Start time   : 2023-03-13T09:49:14
+End time     : 2023-03-13T10:23:32
+Elapsed time : 00:34:18 (Timelimit=02:00:00)
 
-Job ID: 2648001
+Job ID: 2790846
 Cluster: i5
 User/Group: jmom1n15/mm
 State: COMPLETED (exit code 0)
 Nodes: 1
 Cores per node: 64
-CPU Utilized: 1-08:03:45
-CPU Efficiency: 99.20% of 1-08:19:12 core-walltime
-Job Wall-clock time: 00:30:18
-Memory Utilized: 6.78 GB
-Memory Efficiency: 3.01% of 225.00 GB
+CPU Utilized: 1-12:08:45
+CPU Efficiency: 98.80% of 1-12:35:12 core-walltime
+Job Wall-clock time: 00:34:18
+Memory Utilized: 6.79 GB
+Memory Efficiency: 3.02% of 225.00 GB
 
