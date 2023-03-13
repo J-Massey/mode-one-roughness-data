@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import os
+from pathlib import Path
 
 # from turtle import color
 import numpy as np
@@ -23,71 +24,69 @@ plt.style.use(["science"])
 plt.rcParams["font.size"] = "10.5"
 
 
-def plot_phase_av_ct_ts():
-    fig, ax = plt.subplots(figsize=(5, 1.))
-    # ax.set_xlabel(f"$ t $")
-    # ax.set_ylabel(r"$ C_{T} $")
-    ax.set_xticklabels([])
+def plot_domain_test():
+    fig, axes = plt.subplots(3, figsize=(5, 1.))
+    axes[-1].set_xlabel(f"$ t $")
+    axes[1].set_ylabel(r"$ C_{T} $")
+    [ax.set_xticklabels([]) for ax in axes[:-1]]
+    [ax.set_xlim(0, 1) for ax in axes]
 
-    ax.set_xlim(0, 1)
 
-    # domain_set(ax, 5000, sns.color_palette("Reds",2)[1], 0)
-    # domain_set(ax, 12000, sns.color_palette("Greens",2)[1], 0.)
-    domain_set(ax, 24000, sns.color_palette("Blues",2)[1], 0)
+    domain_set(axes[0], 6000, sns.color_palette('colorblind')[0])
+    domain_set(axes[1], 12000, sns.color_palette("Greens",2)[1])
+    # domain_set(axes[2], 24000, sns.color_palette("Blues",2)[1])
 
-    legend_elements = [
-        Line2D([0], [0], ls="-", label=r"$Re=5,000$", c=sns.color_palette("Reds",2)[1]),
+    legend_elements1 = [
+        Line2D([0], [0], ls="-", label=r"$Re=5,000$", c=sns.color_palette('colorblind')[0]),
         Line2D([0], [0], ls="-", label=r"$Re=12,000$", c=sns.color_palette("Greens",2)[1]),
         Line2D([0], [0], ls="-", label=r"$Re=24,000$", c=sns.color_palette("Blues",2)[1]),
     ]
-    # legend_elements = [
-    #     Line2D([0], [0], ls="-", label="Domain 1", c="k"),
-    #     Line2D([0], [0], ls=":", label="Domain 2", c="k"),
-    # ]
-    # ax.legend(handles=legend_elements)
-    plt.savefig(f"{os.getcwd()}/figures/24.pdf", bbox_inches="tight", dpi=200)
+    legend_elements2 = [
+        Line2D([0], [0], ls="-", label="Domain 1", c="k"),
+        Line2D([0], [0], ls=":", label="Domain 2", c="k"),
+    ]
+
+    legend1 = axes[0].legend(handles=legend_elements1, loc=2)
+    legend2 = axes[0].legend(handles=legend_elements2, loc=4)
+    axes[0].add_artist(legend1)
+    axes[0].add_artist(legend2)
+
+    plt.savefig(f"{Path.cwd()}/figures/domain-test.pdf", bbox_inches="tight", dpi=200)
 
 
-def domain_set(ax, re, color, offset):
+def domain_set(ax, re, color):
     t_sample = np.linspace(0.01, 0.99, 300)
 
     f = interp_cycle(
-        1024,
-        f"domain-test/{re}/grid-2",
-        "p",
-        "x",
+        f"{re}/grid-2",
     )
 
     ax.plot(
         t_sample,
-        f(t_sample) - offset,
+        f(t_sample),
         color=color,
         ls="-",
     )
 
     f = interp_cycle(
-        1024,
-        f"domain-test/{re}/grid-3",
-        "p",
-        "x",
+        f"{re}/grid-3",
     )
 
     ax.plot(
         t_sample,
-        f(t_sample) - offset,
+        f(t_sample),
         color=color,
         ls=":",
     )
 
 
 def interp_cycle(
-    L,
-    crit_str="3d-check",
-    interest="v",
+    crit_str="grid-2",
+    interest="p",
     direction="x",
 ):
     t, ux, *_ = read_forces(
-        f"/ssdfs/users/jmom1n15/rough-plate-revisions/{crit_str}/{L}/fort.9",
+        f"{Path.cwd().parent}/{crit_str}/1024/fort.9",
         interest=interest,
         direction=direction,
     )
@@ -104,7 +103,7 @@ def interp_cycle(
 
 
 def main():
-    plot_phase_av_ct_ts()
+    plot_domain_test()
 
 
 if __name__ == "__main__":
