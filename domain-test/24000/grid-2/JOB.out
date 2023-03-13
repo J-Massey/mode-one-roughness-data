@@ -1,0 +1,121 @@
+Running SLURM prolog script on ruby016.cluster.local
+===============================================================================
+Job started on Sun Mar 12 21:21:39 GMT 2023
+Job ID          : 2790052
+Job name        : dom
+WorkDir         : /ssdfs/users/jmom1n15/mode-one-roughness/domain-test/24000/grid-2
+Command         : /ssdfs/users/jmom1n15/mode-one-roughness/domain-test/24000/grid-2/subOpt
+Partition       : amd
+Num hosts       : 1
+Num cores       : 64
+Num of tasks    : 64
+Hosts allocated : ruby016
+Job Output Follows ...
+===============================================================================
+Starting calculation at Sun Mar 12 21:21:39 GMT 2023
+---------------------------------------------------------------
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: `libgeom.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+make: `libfluid.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -I/home/jmom1n15/Lotus/solver/src/oop -I/home/jmom1n15/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/jmom1n15/Lotus/solver/src/oop/. -L/home/jmom1n15/Lotus/solver/src/geom/. -lfluid -lgeom
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+ init_mympi: block mismatch
+Number of proccessors :64
+Run folder            :/ssdfs/users/jmom1n15/mode-one-roughness/domain-test/24000/grid-2/1024
+No read folder
+Folder /ssdfs/users/jmom1n15/mode-one-roughness/domain-test/24000/grid-2/1024 exists!
+Moving contents to trash
+Setting up in /ssdfs/users/jmom1n15/mode-one-roughness/domain-test/24000/grid-2/1024
+No postprocessing set up
+No stopping criteria, the simulation will run its course
+Making executable 
+Finished executable 
+Running executable 
+Run all python files for postprocessing
+Popping back up
+==============================================================================
+Running epilogue script on ruby016.
+
+Submit time  : 2023-03-12T21:12:10
+Start time   : 2023-03-12T21:21:39
+End time     : 2023-03-12T21:21:47
+Elapsed time : 00:00:08 (Timelimit=01:00:00)
+
+Job ID: 2790052
+Cluster: i5
+User/Group: jmom1n15/mm
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 64
+CPU Utilized: 00:00:28
+CPU Efficiency: 5.47% of 00:08:32 core-walltime
+Job Wall-clock time: 00:00:08
+Memory Utilized: 2.55 MB
+Memory Efficiency: 0.00% of 225.00 GB
+
