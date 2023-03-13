@@ -1,0 +1,220 @@
+Running SLURM prolog script on ruby072.cluster.local
+===============================================================================
+Job started on Mon Feb 27 13:45:03 GMT 2023
+Job ID          : 2647998
+Job name        : 12k-plate-res
+WorkDir         : /ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/12000
+Command         : /ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/12000/subOpt
+Partition       : amd
+Num hosts       : 1
+Num cores       : 64
+Num of tasks    : 64
+Hosts allocated : ruby072
+Job Output Follows ...
+===============================================================================
+Starting calculation at Mon Feb 27 13:45:03 GMT 2023
+---------------------------------------------------------------
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: `libgeom.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+make: `libfluid.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -I/home/jmom1n15/Lotus/solver/src/oop -I/home/jmom1n15/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/jmom1n15/Lotus/solver/src/oop/. -L/home/jmom1n15/Lotus/solver/src/geom/. -lfluid -lgeom
+ Setting up the grid, body and fluid
+ -----------------------------------
+composite(384.0)=384
+  products :3*2**7
+composite(384.0)=384
+  products :3*2**7
+composite(.0)=1
+ Stretched grid sections:
+  negative: r= 2.3%, h_max=12.6
+  positive: r= 2.4%, h_max=9.9
+ grid symmetry:  F
+ Stretched grid sections:
+  negative: r= 1.4%, h_max=6.0
+  positive: r= 1.4%, h_max=6.0
+ grid symmetry:  T
+ Starting time update loop
+ -----------------------------------
+Time:          0.000
+Time:          1.006
+Time:          2.007
+Time:          3.006
+Time:          4.009
+Time:          5.003
+ Loop complete: writing restart files and exiting
+ -----------------------------------
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: `libgeom.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+make: `libfluid.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -I/home/jmom1n15/Lotus/solver/src/oop -I/home/jmom1n15/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/jmom1n15/Lotus/solver/src/oop/. -L/home/jmom1n15/Lotus/solver/src/geom/. -lfluid -lgeom
+ Setting up the grid, body and fluid
+ -----------------------------------
+composite(768.0)=768
+  products :3*2**8
+composite(768.0)=768
+  products :3*2**8
+composite(.0)=1
+ Stretched grid sections:
+  negative: r= 1.1%, h_max=12.4
+  positive: r= 1.2%, h_max=9.9
+ grid symmetry:  F
+ Stretched grid sections:
+  negative: r= 0.7%, h_max=6.0
+  positive: r= 0.7%, h_max=6.0
+ grid symmetry:  T
+ Starting time update loop
+ -----------------------------------
+Time:          0.000
+Time:          1.003
+Time:          2.001
+Time:          3.003
+Time:          4.000
+Time:          5.000
+ Loop complete: writing restart files and exiting
+ -----------------------------------
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: `libgeom.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+make: `libfluid.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -I/home/jmom1n15/Lotus/solver/src/oop -I/home/jmom1n15/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/jmom1n15/Lotus/solver/src/oop/. -L/home/jmom1n15/Lotus/solver/src/geom/. -lfluid -lgeom
+ Setting up the grid, body and fluid
+ -----------------------------------
+composite(1536.0)=1536
+  products :3*2**9
+composite(1536.0)=1536
+  products :3*2**9
+composite(.0)=1
+ Stretched grid sections:
+  negative: r= 0.6%, h_max=12.5
+  positive: r= 0.6%, h_max=9.9
+ grid symmetry:  F
+ Stretched grid sections:
+  negative: r= 0.4%, h_max=6.0
+  positive: r= 0.4%, h_max=6.0
+ grid symmetry:  T
+ Starting time update loop
+ -----------------------------------
+Time:          0.000
+Time:          1.001
+Time:          2.000
+Time:          3.001
+Time:          4.000
+Time:          5.001
+ Loop complete: writing restart files and exiting
+ -----------------------------------
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: `libgeom.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+make: `libfluid.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -I/home/jmom1n15/Lotus/solver/src/oop -I/home/jmom1n15/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/jmom1n15/Lotus/solver/src/oop/. -L/home/jmom1n15/Lotus/solver/src/geom/. -lfluid -lgeom
+ Setting up the grid, body and fluid
+ -----------------------------------
+composite(3072.0)=3072
+  products :3*2**10
+composite(3072.0)=3072
+  products :3*2**10
+composite(.0)=1
+ Stretched grid sections:
+  negative: r= 0.3%, h_max=12.4
+  positive: r= 0.3%, h_max=9.9
+ grid symmetry:  F
+ Stretched grid sections:
+  negative: r= 0.2%, h_max=6.1
+  positive: r= 0.2%, h_max=6.1
+ grid symmetry:  T
+ Starting time update loop
+ -----------------------------------
+Time:          0.000
+Time:          1.000
+Time:          2.000
+Time:          3.000
+Time:          4.000
+Time:          5.000
+ Loop complete: writing restart files and exiting
+ -----------------------------------
+Number of proccessors :64
+Run folder            :/ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/12000/256
+No read folder
+Folder /ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/12000/256 exists!
+Moving contents to trash
+Setting up in /ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/12000/256
+No postprocessing set up
+No stopping criteria, the simulation will run its course
+Making executable 
+Finished executable 
+Running executable 
+Run all python files for postprocessing
+Popping back up
+Number of proccessors :64
+Run folder            :/ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/12000/512
+No read folder
+Folder /ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/12000/512 exists!
+Moving contents to trash
+Setting up in /ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/12000/512
+No postprocessing set up
+No stopping criteria, the simulation will run its course
+Making executable 
+Finished executable 
+Running executable 
+Run all python files for postprocessing
+Popping back up
+Number of proccessors :64
+Run folder            :/ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/12000/1024
+No read folder
+Folder /ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/12000/1024 exists!
+Moving contents to trash
+Setting up in /ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/12000/1024
+No postprocessing set up
+No stopping criteria, the simulation will run its course
+Making executable 
+Finished executable 
+Running executable 
+Run all python files for postprocessing
+Popping back up
+Number of proccessors :64
+Run folder            :/ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/12000/2048
+No read folder
+Folder /ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/12000/2048 exists!
+Moving contents to trash
+Setting up in /ssdfs/users/jmom1n15/rough-plate-revisions/plate-res-test/12000/2048
+No postprocessing set up
+No stopping criteria, the simulation will run its course
+Making executable 
+Finished executable 
+Running executable 
+Run all python files for postprocessing
+Popping back up
+==============================================================================
+Running epilogue script on ruby072.
+
+Submit time  : 2023-02-27T13:44:29
+Start time   : 2023-02-27T13:45:03
+End time     : 2023-02-27T14:27:13
+Elapsed time : 00:42:10 (Timelimit=02:00:00)
+
+Job ID: 2647998
+Cluster: i5
+User/Group: jmom1n15/mm
+State: COMPLETED (exit code 0)
+Nodes: 1
+Cores per node: 64
+CPU Utilized: 1-20:41:50
+CPU Efficiency: 99.38% of 1-20:58:40 core-walltime
+Job Wall-clock time: 00:42:10
+Memory Utilized: 6.77 GB
+Memory Efficiency: 3.01% of 225.00 GB
+
