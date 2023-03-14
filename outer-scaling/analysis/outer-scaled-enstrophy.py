@@ -37,107 +37,72 @@ def plot_enstrophy():
     ax.set_xlabel(r"$\zeta$")
     ax.set_ylabel(r"E")
 
+    for idx, _ in enumerate(res):
+        enst_plot_helper(ax, idx)
+
+    legend_elements = [
+        Line2D(
+            [0],
+            [0],
+            ls="-.",
+            label=r"$Re=6,000$",
+            c=sns.color_palette('colorblind')[0],
+            marker="^",
+            markerfacecolor="none",
+        ),
+        Line2D(
+            [0],
+            [0],
+            ls="-",
+            label=r"$Re=12,000$",
+            c=sns.color_palette('colorblind')[1],
+            marker="P",
+            markerfacecolor="none",
+        ),
+        Line2D(
+            [0],
+            [0],
+            ls="--",
+            label=r"$Re=24,000$",
+            c=sns.color_palette('colorblind')[2],
+            marker="o",
+            markerfacecolor="none",
+        ),
+    ]
+    legend1 = ax.legend(handles=legend_elements, loc=4)
+    ax.add_artist(legend1)
+
+    plt.savefig(f"{os.getcwd()}/figures/enstrophy.pdf", bbox_inches="tight", dpi=300)
+
+
+def enst_plot_helper(ax, re_idx):
     zeta, lam = np.load(f"{cwd}/zeta_lambda.npy", allow_pickle=True)
-
-    # k_lam = np.arange(4, 56, 4)
-    # ax.plot(
-    #     interp1d(lam, zeta)(1/k_lam),
-    #     get_enstrophy(k_lam, 6000) / (1024 * 0.25 / 4),  # Spanwise avg
-    #     markerfacecolor="None",
-    #     marker="^",
-    #     color=sns.color_palette('colorblind')[0],
-    #     # alpha=0.7,
-    #     ls="-.",
-    # )
-
-    # ax.plot(
-    #     interp1d(lam, zeta)(1/k_lam),
-    #     get_enstrophy(k_lam, 6000, "-2d"),
-    #     markerfacecolor="None",
-    #     marker="^",
-    #     color=sns.color_palette('colorblind')[0],
-    #     alpha=0.7,
-    #     ls="-.",
-    # )
-
-    k_lam = np.arange(4, 32, 4)
-
+    k_lam = np.arange(4, 46, 4)
     zet = np.append(1/0.94, interp1d(lam, zeta)(1 / k_lam))
-    enstrophy = np.append(get_enstrophy(np.array([0]), 12000)*SA_enstrophy_scaling(1/1024), get_enstrophy(k_lam, 12000) * SA_enstrophy_scaling(0.03125))
 
-    enstrophy_2d = np.append(get_enstrophy(np.array([0]), 12000, '-2d')*SA_enstrophy_scaling(1/1024), get_enstrophy(k_lam, 12000, '-2d') * SA_enstrophy_scaling(1/1024))
+    enstrophy = np.append(
+        get_enstrophy(np.array([0]), res[re_idx])*SA_enstrophy_scaling(1/1024),
+        get_enstrophy(k_lam, res[re_idx]) * SA_enstrophy_scaling(0.03125)
+        )
 
-    # ax.plot(
-    #     zet,
-    #     enstrophy/enstrophy_2d,
-    #     markerfacecolor="None",
-    #     marker="P",
-    #     color=sns.color_palette("colorblind")[1],
-    #     # alpha=0.7,
-    #     ls="-",
-    # )
     ax.plot(
-        zet, enstrophy_2d,
+        zet,
+        enstrophy,
         markerfacecolor="None",
-        marker="P",
-        color="grey",
-        alpha=0.8,
+        marker=markers[re_idx],
+        color=sns.color_palette("colorblind")[re_idx],
+        # alpha=0.7,
         ls="-",
     )
 
-    # k_lam = np.arange(4, 56, 4)
 
-    # ax.plot(
-    #     interp1d(lam, zeta)(1/k_lam),
-    #     get_enstrophy(k_lam, 24000) / (1024 * 0.25 / 4),  # Spanwise avg
-    #     markerfacecolor="None",
-    #     marker="o",
-    #     color=sns.color_palette('colorblind')[2],
-    #     # alpha=0.7,
-    #     ls="--",
-    # )
+def plot_enstrophy_2d():
+    fig, ax = plt.subplots(figsize=(2.5, 2.5))
+    ax.set_xlabel(r"$\zeta$")
+    ax.set_ylabel(r"E")
 
-    # ax.plot(
-    #     interp1d(lam, zeta)(1/k_lam),
-    #     get_enstrophy(k_lam, 24000, "-2d"),
-    #     markerfacecolor="None",
-    #     marker="o",
-    #     color=sns.color_palette('colorblind')[2],
-    #     alpha=0.7,
-    #     ls="--",
-    # )
-
-    # legend_elements = [
-    #     # Line2D(
-    #     #     [0],
-    #     #     [0],
-    #     #     ls="-.",
-    #     #     label=r"$Re=6,000$",
-    #     #     c=sns.color_palette('colorblind')[0],
-    #     #     marker="^",
-    #     #     markerfacecolor="none",
-    #     # ),
-    #     Line2D(
-    #         [0],
-    #         [0],
-    #         ls="-",
-    #         label=r"$Re=12,000$",
-    #         c=sns.color_palette('colorblind')[1],
-    #         marker="P",
-    #         markerfacecolor="none",
-    #     ),
-    #     # Line2D(
-    #     #     [0],
-    #     #     [0],
-    #     #     ls="--",
-    #     #     label=r"$Re=24,000$",
-    #     #     c=sns.color_palette('colorblind')[2],
-    #     #     marker="o",
-    #     #     markerfacecolor="none",
-    #     # ),
-    # ]
-    # legend1 = plt.legend(handles=legend_elements, loc=2)
-    # ax.add_artist(legend1)
+    for idx, _ in enumerate(res):
+        enst_plot_helper_2d(ax, idx)
 
     legend_elements = [
         Line2D(
@@ -161,8 +126,28 @@ def plot_enstrophy():
     legend2 = plt.legend(handles=legend_elements, loc=4)
     ax.add_artist(legend2)
 
-    plt.savefig(f"{os.getcwd()}/figures/enstrophy.pdf", bbox_inches="tight", dpi=300)
+    plt.savefig(f"{os.getcwd()}/figures/enstrophy-2d.pdf", bbox_inches="tight", dpi=300)
 
+
+def enst_plot_helper_2d(ax, re_idx):
+    zeta, lam = np.load(f"{cwd}/zeta_lambda.npy", allow_pickle=True)
+    k_lam = np.arange(4, 46, 4)
+    zet = np.append(1/0.94, interp1d(lam, zeta)(1 / k_lam))
+
+    enstrophy_2d = np.append(
+        get_enstrophy(np.array([0]), res[re_idx], '-2d')*SA_enstrophy_scaling(1/1024),
+        get_enstrophy(k_lam, res[re_idx], '-2d') * SA_enstrophy_scaling(1/1024)
+        )
+
+    ax.plot(
+        zet,
+        enstrophy_2d,
+        markerfacecolor="None",
+        marker=markers[re_idx],
+        color='grey',
+        alpha=0.8,
+        ls="-",
+    )
 
 def plot_enstrophy_diff():
     fig, ax = plt.subplots(figsize=(4.5, 2.5))
@@ -261,7 +246,7 @@ def get_enstrophy(lam, re, d=""):
         t, p = read_forces(
             f"{Path.cwd().parent}/{re}/{lam[idx]}{d}/fort.9",
             interest="E",
-            direction="",
+            direction="b",
         )
         thrust[idx] = np.mean(p[t > 4])
     return thrust
@@ -302,10 +287,13 @@ def read_csv(fn):
 
 def main():
     plot_enstrophy()
+    plot_enstrophy_2d()
     plot_enstrophy_diff()
     # print_convergence(np.arange(4, 24, 4))
 
 
 if __name__ == "__main__":
     cwd = os.getcwd()
+    markers = ['^', 'p', 'o']
+    res = [6000, 12000, 24000]
     main()
