@@ -11,12 +11,12 @@ import numpy as np
 def run_val(zeta, k_lam):
     new_f90_res(zeta, 1/k_lam)
     run(256, f'{cwd}/{k_lam}')
-    new_f90_2d(zeta, 1/k_lam)
-    run(256, f'{cwd}/{k_lam}-2d')
+    # new_f90_2d(zeta, 1/k_lam)
+    # run(256, f'{cwd}/{k_lam}-2d')
 
 if __name__ == "__main__":
     cwd = Path.cwd()
-    k_lams = np.arange(4, 56, 4)
+    k_lams = np.arange(4, 28, 4)
     zeta, lam = np.load(f'{cwd}/zeta_lambda.npy', allow_pickle=True)
     [run_val(interp1d(lam, zeta)(1/k_lam), k_lam) for k_lam in k_lams]
     
