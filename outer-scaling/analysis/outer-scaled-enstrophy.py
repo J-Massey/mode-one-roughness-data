@@ -43,11 +43,7 @@ def scale_enstrophy(raw_enstrophy: float, k_la: float, d: str) -> float:
     if k_la==0 or d=="-2d":
         # Scale the enstrophy using the SA_enstrophy_scaling function
         scaled_enstrophy = raw_enstrophy * SA_enstrophy_scaling(1/1024)
-    elif k_la == 4:
-        scaled_enstrophy = raw_enstrophy * SA_enstrophy_scaling(6/k_la/4)
-    elif k_la == 16:
-        scaled_enstrophy = raw_enstrophy * SA_enstrophy_scaling(6/k_la/4)
-    elif k_la == 20:
+    elif k_la <= 24:
         scaled_enstrophy = raw_enstrophy * SA_enstrophy_scaling(6/k_la/4)
     else:
         scaled_enstrophy = raw_enstrophy * SA_enstrophy_scaling(0.03125)
@@ -213,8 +209,11 @@ def read_csv(fn):
     with open(fn) as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=",")
         for row in csv_reader:
-            st.append(float(row[0]))
-            ct.append(float(row[1]))
+            try:
+                st.append(float(row[0]))
+                ct.append(float(row[1]))
+            except ValueError:
+                continue
     return np.array(st), np.array(ct)
 
 
@@ -226,8 +225,10 @@ def plot_wrapper():
     plot_enstrophy_2d(axd['upper right']) # type: ignore
     plot_enstrophy_diff(axd['lower'])  # type: ignore
 
-    axd['lower'].legend(handles=re_legend(), loc=4) # type: ignore
-
+    legend1 = axd['lower'].legend(handles=re_legend(), loc=4) # type: ignore
+    legend2 = axd['lower'].legend(handles=smooth_rough_legend(), loc=1) # type: ignore
+    axd['lower'].add_artist(legend1) # type: ignore
+    
     plt.savefig(
         f"{os.getcwd()}/figures/figure9.pdf", bbox_inches="tight", dpi=300
     )
@@ -235,17 +236,12 @@ def plot_wrapper():
 
 def main():
     plot_wrapper()
-    # plot_enstrophy()
-    # plot_enstrophy_2d()
-    # plot_enstrophy_diff()
-    # print_convergence(np.arange(4, 24, 4))
 
 
 if __name__ == "__main__":
     cwd = os.getcwd()
     markers = ['^', 'p', 'o']
     res = [6000, 12000, 24000]
-    res=[24000]
     k_lams = np.arange(0, 52, 4)
     main()
     
