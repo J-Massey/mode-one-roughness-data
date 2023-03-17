@@ -49,7 +49,7 @@ program swimming_plate
     if(ndims==2) then
       z = 0.0
     else
-      z = 0.03125
+      z = 0.375
     end if
     m = [1.5,1.5, z]
     n = composite(c*m,prnt=root)
