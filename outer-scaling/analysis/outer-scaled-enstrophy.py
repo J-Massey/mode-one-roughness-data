@@ -43,7 +43,7 @@ def scale_enstrophy(raw_enstrophy: float, k_la: float, d: str) -> float:
     if k_la==0 or d=="-2d":
         # Scale the enstrophy using the SA_enstrophy_scaling function
         scaled_enstrophy = raw_enstrophy * SA_enstrophy_scaling(1/1024)
-    elif k_la <16:
+    elif k_la <24:
         scaled_enstrophy = raw_enstrophy * SA_enstrophy_scaling(6/k_la/4)
     else:
         scaled_enstrophy = raw_enstrophy * SA_enstrophy_scaling(0.03125)
@@ -52,7 +52,7 @@ def scale_enstrophy(raw_enstrophy: float, k_la: float, d: str) -> float:
 
 def plot_enstrophy_3d(ax: Axes) -> None:
     ax.set_xlabel(r"$\zeta$")
-    ax.set_ylabel(r"E")
+    ax.set_ylabel(r"$E$")
     ax.set_xlim(1, 2)
 
     for idx, _ in enumerate(res):
@@ -60,15 +60,15 @@ def plot_enstrophy_3d(ax: Axes) -> None:
 
 
 def enst_plot_helper(ax: Axes, re_idx: int) -> None:
-    # Load the values of zeta (the non-dimensionalized wall distance) and
-    # lambda (the non-dimensionalized Reynolds number) from the data file
+    # Load the values of zeta (the wave speed) and
+    # lambda (the roughness wavelength) from the data file
     zeta, lam = np.load(f"{cwd}/zeta_lambda.npy", allow_pickle=True)
 
     # Use a linear interpolation to find the value of zeta for the given
-    # Reynolds number
+    # roughness wavelength
     zet = interp1d(lam, zeta)(1 / k_lams)
 
-    # Get the enstrophy for the given Reynolds number
+    # Get the enstrophy for the given roughness wavelength
     enstrophy = get_enstrophy(k_lams, res[re_idx])
 
     # Plot the enstrophy as a function of zeta
@@ -84,7 +84,7 @@ def enst_plot_helper(ax: Axes, re_idx: int) -> None:
 
 def plot_enstrophy_2d(ax: Axes) -> None:
     ax.set_xlabel(r"$\zeta$")
-    ax.set_ylabel(r"E_s")
+    ax.set_ylabel(r"$E_s$")
     ax.set_xlim(1, 2)
 
     for idx, _ in enumerate(res):
@@ -109,44 +109,21 @@ def enst_plot_helper_2d(ax: Axes, re_idx: int) -> None:
 
 
 def plot_enstrophy_diff(ax):
-    # fig, ax = plt.subplots(figsize=(4.5, 2.5))
     ax.set_xlabel(r"$\lambda/\delta$")
     ax.set_ylabel(r"$\Delta E/E_{s}$")
 
     ax.set_xlim(0, 5)
 
-    ax.scatter(
-        1 / k_lams / 0.06,
-        (get_enstrophy(k_lams, 6000) / (1024 * 0.25 / 4) - get_enstrophy(k_lams, 6000, "-2d"))
-        / get_enstrophy(k_lams, 6000, "-2d"),
-        facecolor="None",
-        marker="^",
-        color=sns.color_palette("colorblind")[0],
-    )
+    for idx, re in enumerate(res):
+        enst_diff = (get_enstrophy(k_lams, re) - get_enstrophy(k_lams, re, "-2d"))/get_enstrophy(k_lams, re, "-2d")
 
-    ax.scatter(
-        1 / k_lams / 0.06,
-        (
-            get_enstrophy(k_lams, 12000) / (1024 * 0.25 / 4)
-            - get_enstrophy(k_lams, 12000, "-2d")
+        ax.scatter(
+            1 / k_lams / 0.06,  # 0.06 is 2*delta
+            enst_diff,
+            facecolor="None",
+            marker=markers[idx],
+            color=sns.color_palette("colorblind")[idx],
         )
-        / get_enstrophy(k_lams, 12000, "-2d"),
-        facecolor="None",
-        marker="P",
-        color=sns.color_palette("colorblind")[1],
-    )
-
-    ax.scatter(
-        1 / k_lams / 0.06,
-        (
-            get_enstrophy(k_lams, 24000) / (1024 * 0.25 / 4)
-            - get_enstrophy(k_lams, 24000, "-2d")
-        )
-        / get_enstrophy(k_lams, 24000, "-2d"),
-        facecolor="None",
-        marker="o",
-        color=sns.color_palette("colorblind")[2],
-    )
 
 def re_legend():
     legend_elements = [
@@ -243,7 +220,7 @@ def plot_wrapper():
                               figsize=(5., 5.), layout="constrained")
     plot_enstrophy_3d(axd['upper left']) # type: ignore
     plot_enstrophy_2d(axd['upper right']) # type: ignore
-    # plot_enstrophy_diff(axd['lower'])  # type: ignore
+    plot_enstrophy_diff(axd['lower'])  # type: ignore
 
     axd['lower'].legend(handles=re_legend(), loc=4) # type: ignore
 

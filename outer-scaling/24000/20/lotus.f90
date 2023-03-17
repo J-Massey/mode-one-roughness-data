@@ -13,7 +13,7 @@ program swimming_plate
   !
     real,parameter     :: c=1024.0, nu=c/Re
     real, parameter    :: finish=7
-    integer            :: b(3) = [16,16,1]
+    integer            :: b(3) = [8,8,1]
   !
   ! -- Hyperparameters
     real, parameter    :: thicc=0.03*c
@@ -49,7 +49,7 @@ program swimming_plate
     if(ndims==2) then
       z = 0.0
     else
-      z = 0.03125
+      z = 0.07500000000000001
     end if
     m = [1.5,1.5, z]
     n = composite(c*m,prnt=root)
