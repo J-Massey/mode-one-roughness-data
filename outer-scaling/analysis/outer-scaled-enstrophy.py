@@ -228,9 +228,9 @@ def plot_wrapper():
     legend1 = axd['lower'].legend(handles=re_legend(), loc=4) # type: ignore
     legend2 = axd['lower'].legend(handles=smooth_rough_legend(), loc=1) # type: ignore
     axd['lower'].add_artist(legend1) # type: ignore
-    
+
     plt.savefig(
-        f"{os.getcwd()}/figures/figure9.pdf", bbox_inches="tight", dpi=300
+        f"{os.getcwd()}/figures/figure8.pdf", bbox_inches="tight", dpi=300
     )
 
 
