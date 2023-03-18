@@ -32,7 +32,7 @@ def get_enstrophy(k_lam: np.ndarray, re: int, d: str = "") -> np.ndarray:
         t, p = read_forces(
             f"{Path.cwd().parent}/{re}/{k_lam[idx]}{d}/fort.9",
             interest="E",
-            direction="",
+            direction="b",
         )
         raw_enstrophy = np.mean(p[t > 4])
         enstrophy[idx] = scale_enstrophy(raw_enstrophy, k_la, d)
@@ -43,8 +43,8 @@ def scale_enstrophy(raw_enstrophy: float, k_la: float, d: str) -> float:
     if k_la==0 or d=="-2d":
         # Scale the enstrophy using the SA_enstrophy_scaling function
         scaled_enstrophy = raw_enstrophy * SA_enstrophy_scaling(1/1024)
-    elif k_la <= 24:
-        scaled_enstrophy = raw_enstrophy * SA_enstrophy_scaling(6/k_la/4)
+    elif k_la <= 16:
+        scaled_enstrophy = raw_enstrophy * SA_enstrophy_scaling((6/k_la)/4)
     else:
         scaled_enstrophy = raw_enstrophy * SA_enstrophy_scaling(0.03125)
     return scaled_enstrophy
@@ -242,6 +242,6 @@ if __name__ == "__main__":
     cwd = os.getcwd()
     markers = ['^', 'p', 'o']
     res = [6000, 12000, 24000]
-    k_lams = np.arange(0, 52, 4)
+    k_lams = np.arange(0, 20, 4)
     main()
     
