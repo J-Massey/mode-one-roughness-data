@@ -49,7 +49,7 @@ program swimming_plate
     if(ndims==2) then
       z = 0.0
     else
-      z = 0.03125
+      z = 0.375
     end if
     m = [1.5,1.5, z]
     n = composite(c*m,prnt=root)
@@ -80,11 +80,11 @@ program swimming_plate
       vforce = 2.*nu*geom%vforce(flow%velocity)/(c*n(3)*xg(3)%h)
       vforce1 = 2.*nu*geom%vforce_f(flow%velocity)/(c*n(3)*xg(3)%h)
       vforce2 = 2.*nu*geom%vforce_s(flow%velocity)/(c*n(3)*xg(3)%h)
-      enstrophy_body = flow%velocity%enstrophy(lcorn=c*[-0.25,-0.5,0.],ucorn=c*[2.0,0.5,0.125])
-      enstrophy_wake = flow%velocity%enstrophy(lcorn=c*[1.1,-0.5,0.],ucorn=c*[2.1,0.5,0.125])
+      enstrophy_body = flow%velocity%enstrophy(lcorn=c*[-0.25,-0.5,0.],ucorn=c*[2.0,0.5,2.])
+      enstrophy_wake = flow%velocity%enstrophy(lcorn=c*[1.1,-0.5,0.],ucorn=c*[2.1,0.5,2.])
       enstrophy = flow%velocity%enstrophy()
-      tke_body = flow%velocity%tke(lcorn=c*[-0.25,-0.5,0.],ucorn=c*[2.0,0.5,0.125])
-      tke_wake = flow%velocity%tke(lcorn=c*[1.1,-0.5,0.],ucorn=c*[2.1,0.5,0.125])
+      tke_body = flow%velocity%tke(lcorn=c*[-0.25,-0.5,0.],ucorn=c*[2.0,0.5,2.])
+      tke_wake = flow%velocity%tke(lcorn=c*[1.1,-0.5,0.],ucorn=c*[2.1,0.5,2.])
       tke = flow%velocity%tke()
       
       write(9,'(f10.4,f8.4,4e16.8,4e16.8,4e16.8,4e16.8,4e16.8,4e16.8)')&

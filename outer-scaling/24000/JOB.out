@@ -1,138 +1,35 @@
-Running SLURM prolog script on ruby050.cluster.local
+Running SLURM prolog script on ruby069.cluster.local
 ===============================================================================
-Job started on Sat Mar 11 10:32:14 GMT 2023
-Job ID          : 2784861
-Job name        : lambda-scale
-WorkDir         : /mainfs/scratch/ml4n17/jm/24000
-Command         : /mainfs/scratch/ml4n17/jm/24000/subOpt
+Job started on Sat Mar 18 00:26:43 GMT 2023
+Job ID          : 2848777
+Job name        : 24k
+WorkDir         : /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000
+Command         : /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/subOpt
 Partition       : amd
 Num hosts       : 4
 Num cores       : 256
 Num of tasks    : 256
-Hosts allocated : ruby[050-051,059-060]
+Hosts allocated : ruby[069-071,073]
 Job Output Follows ...
 ===============================================================================
-Starting calculation at Sat Mar 11 10:32:14 GMT 2023
+Starting calculation at Sat Mar 18 00:26:43 GMT 2023
 ---------------------------------------------------------------
-make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
 make: `libgeom.a' is up to date.
-make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
-make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
 make: `libfluid.a' is up to date.
-make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
-mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -I/home/ml4n17/Lotus/solver/src/oop -I/home/ml4n17/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
-mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/ml4n17/Lotus/solver/src/oop/. -L/home/ml4n17/Lotus/solver/src/geom/. -lfluid -lgeom
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -I/home/jmom1n15/Lotus/solver/src/oop -I/home/jmom1n15/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/jmom1n15/Lotus/solver/src/oop/. -L/home/jmom1n15/Lotus/solver/src/geom/. -lfluid -lgeom
  Setting up the grid, body and fluid
  -----------------------------------
 composite(1536.0)=1536
   products :3*2**9
 composite(1536.0)=1536
   products :3*2**9
-composite(32.0)=32
-  products :1*2**5
- Stretched grid sections:
-  negative: r= 0.6%, h_max=12.5
-  positive: r= 0.6%, h_max=9.9
- grid symmetry:  F
- Stretched grid sections:
-  negative: r= 0.4%, h_max=6.0
-  positive: r= 0.4%, h_max=6.0
- grid symmetry:  T
- Starting time update loop
- -----------------------------------
-Time:          0.000
-Time:          1.001
-Time:          2.001
-Time:          3.001
-Time:          4.000
-Time:          5.001
-Time:          6.000
- Loop complete: writing restart files and exiting
- -----------------------------------
-make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
-make: `libgeom.a' is up to date.
-make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
-make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
-make: `libfluid.a' is up to date.
-make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
-mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -I/home/ml4n17/Lotus/solver/src/oop -I/home/ml4n17/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
-mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/ml4n17/Lotus/solver/src/oop/. -L/home/ml4n17/Lotus/solver/src/geom/. -lfluid -lgeom
- Setting up the grid, body and fluid
- -----------------------------------
-composite(1536.0)=1536
-  products :3*2**9
-composite(1536.0)=1536
-  products :3*2**9
-composite(.0)=1
- Stretched grid sections:
-  negative: r= 0.6%, h_max=12.5
-  positive: r= 0.6%, h_max=9.9
- grid symmetry:  F
- Stretched grid sections:
-  negative: r= 0.4%, h_max=6.0
-  positive: r= 0.4%, h_max=6.0
- grid symmetry:  T
- Starting time update loop
- -----------------------------------
-Time:          0.000
-Time:          1.000
-Time:          2.001
-Time:          3.000
-Time:          4.001
-Time:          5.001
-Time:          6.001
- Loop complete: writing restart files and exiting
- -----------------------------------
-make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
-make: `libgeom.a' is up to date.
-make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
-make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
-make: `libfluid.a' is up to date.
-make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
-mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -I/home/ml4n17/Lotus/solver/src/oop -I/home/ml4n17/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
-mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/ml4n17/Lotus/solver/src/oop/. -L/home/ml4n17/Lotus/solver/src/geom/. -lfluid -lgeom
- Setting up the grid, body and fluid
- -----------------------------------
-composite(1536.0)=1536
-  products :3*2**9
-composite(1536.0)=1536
-  products :3*2**9
-composite(32.0)=32
-  products :1*2**5
- Stretched grid sections:
-  negative: r= 0.6%, h_max=12.5
-  positive: r= 0.6%, h_max=9.9
- grid symmetry:  F
- Stretched grid sections:
-  negative: r= 0.4%, h_max=6.0
-  positive: r= 0.4%, h_max=6.0
- grid symmetry:  T
- Starting time update loop
- -----------------------------------
-Time:          0.000
-Time:          1.001
-Time:          2.001
-Time:          3.001
-Time:          4.000
-Time:          5.000
-Time:          6.001
- Loop complete: writing restart files and exiting
- -----------------------------------
-make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
-make: `libgeom.a' is up to date.
-make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
-make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
-make: `libfluid.a' is up to date.
-make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
-mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -I/home/ml4n17/Lotus/solver/src/oop -I/home/ml4n17/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
-mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/ml4n17/Lotus/solver/src/oop/. -L/home/ml4n17/Lotus/solver/src/geom/. -lfluid -lgeom
- Setting up the grid, body and fluid
- -----------------------------------
-composite(1536.0)=1536
-  products :3*2**9
-composite(1536.0)=1536
-  products :3*2**9
-composite(.0)=1
+composite(384.0)=384
+  products :3*2**7
  Stretched grid sections:
   negative: r= 0.6%, h_max=12.5
   positive: r= 0.6%, h_max=9.9
@@ -147,96 +44,27 @@ Time:          0.000
 Time:          1.000
 Time:          2.001
 Time:          3.001
-Time:          4.001
-Time:          5.000
-Time:          6.000
- Loop complete: writing restart files and exiting
- -----------------------------------
-make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
-make: `libgeom.a' is up to date.
-make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
-make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
-make: `libfluid.a' is up to date.
-make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
-mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -I/home/ml4n17/Lotus/solver/src/oop -I/home/ml4n17/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
-mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/ml4n17/Lotus/solver/src/oop/. -L/home/ml4n17/Lotus/solver/src/geom/. -lfluid -lgeom
- Setting up the grid, body and fluid
- -----------------------------------
-composite(1536.0)=1536
-  products :3*2**9
-composite(1536.0)=1536
-  products :3*2**9
-composite(32.0)=32
-  products :1*2**5
- Stretched grid sections:
-  negative: r= 0.6%, h_max=12.5
-  positive: r= 0.6%, h_max=9.9
- grid symmetry:  F
- Stretched grid sections:
-  negative: r= 0.4%, h_max=6.0
-  positive: r= 0.4%, h_max=6.0
- grid symmetry:  T
- Starting time update loop
- -----------------------------------
-Time:          0.000
-Time:          1.001
-Time:          2.001
-Time:          3.001
-Time:          4.001
-Time:          5.002
-Time:          6.001
- Loop complete: writing restart files and exiting
- -----------------------------------
-make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
-make: `libgeom.a' is up to date.
-make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
-make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
-make: `libfluid.a' is up to date.
-make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
-mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -I/home/ml4n17/Lotus/solver/src/oop -I/home/ml4n17/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
-mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/ml4n17/Lotus/solver/src/oop/. -L/home/ml4n17/Lotus/solver/src/geom/. -lfluid -lgeom
- Setting up the grid, body and fluid
- -----------------------------------
-composite(1536.0)=1536
-  products :3*2**9
-composite(1536.0)=1536
-  products :3*2**9
-composite(.0)=1
- Stretched grid sections:
-  negative: r= 0.6%, h_max=12.5
-  positive: r= 0.6%, h_max=9.9
- grid symmetry:  F
- Stretched grid sections:
-  negative: r= 0.4%, h_max=6.0
-  positive: r= 0.4%, h_max=6.0
- grid symmetry:  T
- Starting time update loop
- -----------------------------------
-Time:          0.000
-Time:          1.001
-Time:          2.001
-Time:          3.001
-Time:          4.001
+Time:          4.000
 Time:          5.001
 Time:          6.001
  Loop complete: writing restart files and exiting
  -----------------------------------
-make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
 make: `libgeom.a' is up to date.
-make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
-make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
 make: `libfluid.a' is up to date.
-make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
-mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -I/home/ml4n17/Lotus/solver/src/oop -I/home/ml4n17/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
-mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/ml4n17/Lotus/solver/src/oop/. -L/home/ml4n17/Lotus/solver/src/geom/. -lfluid -lgeom
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -I/home/jmom1n15/Lotus/solver/src/oop -I/home/jmom1n15/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/jmom1n15/Lotus/solver/src/oop/. -L/home/jmom1n15/Lotus/solver/src/geom/. -lfluid -lgeom
  Setting up the grid, body and fluid
  -----------------------------------
 composite(1536.0)=1536
   products :3*2**9
 composite(1536.0)=1536
   products :3*2**9
-composite(32.0)=32
-  products :1*2**5
+composite(192.0)=192
+  products :3*2**6
  Stretched grid sections:
   negative: r= 0.6%, h_max=12.5
   positive: r= 0.6%, h_max=9.9
@@ -256,21 +84,22 @@ Time:          5.001
 Time:          6.001
  Loop complete: writing restart files and exiting
  -----------------------------------
-make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
 make: `libgeom.a' is up to date.
-make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
-make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
 make: `libfluid.a' is up to date.
-make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
-mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -I/home/ml4n17/Lotus/solver/src/oop -I/home/ml4n17/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
-mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/ml4n17/Lotus/solver/src/oop/. -L/home/ml4n17/Lotus/solver/src/geom/. -lfluid -lgeom
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -I/home/jmom1n15/Lotus/solver/src/oop -I/home/jmom1n15/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/jmom1n15/Lotus/solver/src/oop/. -L/home/jmom1n15/Lotus/solver/src/geom/. -lfluid -lgeom
  Setting up the grid, body and fluid
  -----------------------------------
 composite(1536.0)=1536
   products :3*2**9
 composite(1536.0)=1536
   products :3*2**9
-composite(.0)=1
+composite(128.0)=128
+  products :1*2**7
  Stretched grid sections:
   negative: r= 0.6%, h_max=12.5
   positive: r= 0.6%, h_max=9.9
@@ -283,156 +112,124 @@ composite(.0)=1
  -----------------------------------
 Time:          0.000
 Time:          1.000
-Time:          2.001
-Time:          3.000
-Time:          4.000
-Time:          5.001
-Time:          6.001
- Loop complete: writing restart files and exiting
- -----------------------------------
-make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
-make: `libgeom.a' is up to date.
-make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
-make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
-make: `libfluid.a' is up to date.
-make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
-mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -I/home/ml4n17/Lotus/solver/src/oop -I/home/ml4n17/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
-mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/ml4n17/Lotus/solver/src/oop/. -L/home/ml4n17/Lotus/solver/src/geom/. -lfluid -lgeom
- Setting up the grid, body and fluid
- -----------------------------------
-composite(1536.0)=1536
-  products :3*2**9
-composite(1536.0)=1536
-  products :3*2**9
-composite(32.0)=32
-  products :1*2**5
- Stretched grid sections:
-  negative: r= 0.6%, h_max=12.5
-  positive: r= 0.6%, h_max=9.9
- grid symmetry:  F
- Stretched grid sections:
-  negative: r= 0.4%, h_max=6.0
-  positive: r= 0.4%, h_max=6.0
- grid symmetry:  T
- Starting time update loop
- -----------------------------------
-Time:          0.000
-Time:          1.001
-Time:          2.001
-Time:          3.001
-Time:          4.000
-Time:          5.001
-Time:          6.001
- Loop complete: writing restart files and exiting
- -----------------------------------
-make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
-make: `libgeom.a' is up to date.
-make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
-make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
-make: `libfluid.a' is up to date.
-make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
-mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -I/home/ml4n17/Lotus/solver/src/oop -I/home/ml4n17/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
-mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/ml4n17/Lotus/solver/src/oop/. -L/home/ml4n17/Lotus/solver/src/geom/. -lfluid -lgeom
- Setting up the grid, body and fluid
- -----------------------------------
-composite(1536.0)=1536
-  products :3*2**9
-composite(1536.0)=1536
-  products :3*2**9
-composite(.0)=1
- Stretched grid sections:
-  negative: r= 0.6%, h_max=12.5
-  positive: r= 0.6%, h_max=9.9
- grid symmetry:  F
- Stretched grid sections:
-  negative: r= 0.4%, h_max=6.0
-  positive: r= 0.4%, h_max=6.0
- grid symmetry:  T
- Starting time update loop
- -----------------------------------
-Time:          0.000
-Time:          1.001
-Time:          2.001
-Time:          3.001
-Time:          4.001
-Time:          5.001
-Time:          6.000
- Loop complete: writing restart files and exiting
- -----------------------------------
-make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
-make: `libgeom.a' is up to date.
-make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
-make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
-make: `libfluid.a' is up to date.
-make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
-mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -I/home/ml4n17/Lotus/solver/src/oop -I/home/ml4n17/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
-mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/ml4n17/Lotus/solver/src/oop/. -L/home/ml4n17/Lotus/solver/src/geom/. -lfluid -lgeom
- Setting up the grid, body and fluid
- -----------------------------------
-composite(1536.0)=1536
-  products :3*2**9
-composite(1536.0)=1536
-  products :3*2**9
-composite(32.0)=32
-  products :1*2**5
- Stretched grid sections:
-  negative: r= 0.6%, h_max=12.5
-  positive: r= 0.6%, h_max=9.9
- grid symmetry:  F
- Stretched grid sections:
-  negative: r= 0.4%, h_max=6.0
-  positive: r= 0.4%, h_max=6.0
- grid symmetry:  T
- Starting time update loop
- -----------------------------------
-Time:          0.000
-Time:          1.001
-Time:          2.001
-Time:          3.000
-Time:          4.001
-Time:          5.001
-Time:          6.000
- Loop complete: writing restart files and exiting
- -----------------------------------
-make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
-make: `libgeom.a' is up to date.
-make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/geom'
-make: Entering directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
-make: `libfluid.a' is up to date.
-make: Leaving directory `/mainfs/home/ml4n17/Lotus/solver/src/oop'
-mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -I/home/ml4n17/Lotus/solver/src/oop -I/home/ml4n17/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
-mpif90 -cpp -DMPION -DDUBON -fdefault-real-8 -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/ml4n17/Lotus/solver/src/oop/. -L/home/ml4n17/Lotus/solver/src/geom/. -lfluid -lgeom
- Setting up the grid, body and fluid
- -----------------------------------
-composite(1536.0)=1536
-  products :3*2**9
-composite(1536.0)=1536
-  products :3*2**9
-composite(.0)=1
- Stretched grid sections:
-  negative: r= 0.6%, h_max=12.5
-  positive: r= 0.6%, h_max=9.9
- grid symmetry:  F
- Stretched grid sections:
-  negative: r= 0.4%, h_max=6.0
-  positive: r= 0.4%, h_max=6.0
- grid symmetry:  T
- Starting time update loop
- -----------------------------------
-Time:          0.000
-Time:          1.001
 Time:          2.000
-Time:          3.000
+Time:          3.001
 Time:          4.000
 Time:          5.001
 Time:          6.000
  Loop complete: writing restart files and exiting
  -----------------------------------
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: `libgeom.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+make: `libfluid.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -I/home/jmom1n15/Lotus/solver/src/oop -I/home/jmom1n15/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/jmom1n15/Lotus/solver/src/oop/. -L/home/jmom1n15/Lotus/solver/src/geom/. -lfluid -lgeom
+ Setting up the grid, body and fluid
+ -----------------------------------
+composite(1536.0)=1536
+  products :3*2**9
+composite(1536.0)=1536
+  products :3*2**9
+composite(96.0)=96
+  products :3*2**5
+ Stretched grid sections:
+  negative: r= 0.6%, h_max=12.5
+  positive: r= 0.6%, h_max=9.9
+ grid symmetry:  F
+ Stretched grid sections:
+  negative: r= 0.4%, h_max=6.0
+  positive: r= 0.4%, h_max=6.0
+ grid symmetry:  T
+ Starting time update loop
+ -----------------------------------
+Time:          0.000
+Time:          1.001
+Time:          2.001
+Time:          3.001
+Time:          4.001
+Time:          5.000
+Time:          6.002
+ Loop complete: writing restart files and exiting
+ -----------------------------------
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: `libgeom.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+make: `libfluid.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -I/home/jmom1n15/Lotus/solver/src/oop -I/home/jmom1n15/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/jmom1n15/Lotus/solver/src/oop/. -L/home/jmom1n15/Lotus/solver/src/geom/. -lfluid -lgeom
+ Setting up the grid, body and fluid
+ -----------------------------------
+composite(1536.0)=1536
+  products :3*2**9
+composite(1536.0)=1536
+  products :3*2**9
+composite(76.8)=80
+  products :5*2**4
+ Stretched grid sections:
+  negative: r= 0.6%, h_max=12.5
+  positive: r= 0.6%, h_max=9.9
+ grid symmetry:  F
+ Stretched grid sections:
+  negative: r= 0.4%, h_max=6.0
+  positive: r= 0.4%, h_max=6.0
+ grid symmetry:  T
+ Starting time update loop
+ -----------------------------------
+Time:          0.000
+Time:          1.000
+Time:          2.001
+Time:          3.001
+Time:          4.001
+Time:          5.000
+Time:          6.001
+ Loop complete: writing restart files and exiting
+ -----------------------------------
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: `libgeom.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+make: `libfluid.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -I/home/jmom1n15/Lotus/solver/src/oop -I/home/jmom1n15/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/jmom1n15/Lotus/solver/src/oop/. -L/home/jmom1n15/Lotus/solver/src/geom/. -lfluid -lgeom
+ Setting up the grid, body and fluid
+ -----------------------------------
+composite(1536.0)=1536
+  products :3*2**9
+composite(1536.0)=1536
+  products :3*2**9
+composite(64.0)=64
+  products :1*2**6
+ Stretched grid sections:
+  negative: r= 0.6%, h_max=12.5
+  positive: r= 0.6%, h_max=9.9
+ grid symmetry:  F
+ Stretched grid sections:
+  negative: r= 0.4%, h_max=6.0
+  positive: r= 0.4%, h_max=6.0
+ grid symmetry:  T
+ Starting time update loop
+ -----------------------------------
+Time:          0.000
+Time:          1.001
+Time:          2.002
+Time:          3.002
+Time:          4.001
+Time:          5.001
+Time:          6.001
+ Loop complete: writing restart files and exiting
+ -----------------------------------
 Number of proccessors :256
-Run folder            :/mainfs/scratch/ml4n17/jm/24000/8
+Run folder            :/ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/4
 No read folder
-Creating /mainfs/scratch/ml4n17/jm/24000/8
-Setting up in /mainfs/scratch/ml4n17/jm/24000/8
+Folder /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/4 exists!
+Moving contents to trash
+Setting up in /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/4
 No postprocessing set up
 No stopping criteria, the simulation will run its course
 Making executable 
@@ -441,10 +238,11 @@ Running executable
 Run all python files for postprocessing
 Popping back up
 Number of proccessors :256
-Run folder            :/mainfs/scratch/ml4n17/jm/24000/8-2d
+Run folder            :/ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/8
 No read folder
-Creating /mainfs/scratch/ml4n17/jm/24000/8-2d
-Setting up in /mainfs/scratch/ml4n17/jm/24000/8-2d
+Folder /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/8 exists!
+Moving contents to trash
+Setting up in /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/8
 No postprocessing set up
 No stopping criteria, the simulation will run its course
 Making executable 
@@ -453,10 +251,11 @@ Running executable
 Run all python files for postprocessing
 Popping back up
 Number of proccessors :256
-Run folder            :/mainfs/scratch/ml4n17/jm/24000/16
+Run folder            :/ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/12
 No read folder
-Creating /mainfs/scratch/ml4n17/jm/24000/16
-Setting up in /mainfs/scratch/ml4n17/jm/24000/16
+Folder /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/12 exists!
+Moving contents to trash
+Setting up in /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/12
 No postprocessing set up
 No stopping criteria, the simulation will run its course
 Making executable 
@@ -465,10 +264,11 @@ Running executable
 Run all python files for postprocessing
 Popping back up
 Number of proccessors :256
-Run folder            :/mainfs/scratch/ml4n17/jm/24000/16-2d
+Run folder            :/ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/16
 No read folder
-Creating /mainfs/scratch/ml4n17/jm/24000/16-2d
-Setting up in /mainfs/scratch/ml4n17/jm/24000/16-2d
+Folder /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/16 exists!
+Moving contents to trash
+Setting up in /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/16
 No postprocessing set up
 No stopping criteria, the simulation will run its course
 Making executable 
@@ -477,10 +277,11 @@ Running executable
 Run all python files for postprocessing
 Popping back up
 Number of proccessors :256
-Run folder            :/mainfs/scratch/ml4n17/jm/24000/24
+Run folder            :/ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/20
 No read folder
-Creating /mainfs/scratch/ml4n17/jm/24000/24
-Setting up in /mainfs/scratch/ml4n17/jm/24000/24
+Folder /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/20 exists!
+Moving contents to trash
+Setting up in /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/20
 No postprocessing set up
 No stopping criteria, the simulation will run its course
 Making executable 
@@ -489,82 +290,11 @@ Running executable
 Run all python files for postprocessing
 Popping back up
 Number of proccessors :256
-Run folder            :/mainfs/scratch/ml4n17/jm/24000/24-2d
+Run folder            :/ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/24
 No read folder
-Creating /mainfs/scratch/ml4n17/jm/24000/24-2d
-Setting up in /mainfs/scratch/ml4n17/jm/24000/24-2d
-No postprocessing set up
-No stopping criteria, the simulation will run its course
-Making executable 
-Finished executable 
-Running executable 
-Run all python files for postprocessing
-Popping back up
-Number of proccessors :256
-Run folder            :/mainfs/scratch/ml4n17/jm/24000/32
-No read folder
-Creating /mainfs/scratch/ml4n17/jm/24000/32
-Setting up in /mainfs/scratch/ml4n17/jm/24000/32
-No postprocessing set up
-No stopping criteria, the simulation will run its course
-Making executable 
-Finished executable 
-Running executable 
-Run all python files for postprocessing
-Popping back up
-Number of proccessors :256
-Run folder            :/mainfs/scratch/ml4n17/jm/24000/32-2d
-No read folder
-Creating /mainfs/scratch/ml4n17/jm/24000/32-2d
-Setting up in /mainfs/scratch/ml4n17/jm/24000/32-2d
-No postprocessing set up
-No stopping criteria, the simulation will run its course
-Making executable 
-Finished executable 
-Running executable 
-Run all python files for postprocessing
-Popping back up
-Number of proccessors :256
-Run folder            :/mainfs/scratch/ml4n17/jm/24000/40
-No read folder
-Creating /mainfs/scratch/ml4n17/jm/24000/40
-Setting up in /mainfs/scratch/ml4n17/jm/24000/40
-No postprocessing set up
-No stopping criteria, the simulation will run its course
-Making executable 
-Finished executable 
-Running executable 
-Run all python files for postprocessing
-Popping back up
-Number of proccessors :256
-Run folder            :/mainfs/scratch/ml4n17/jm/24000/40-2d
-No read folder
-Creating /mainfs/scratch/ml4n17/jm/24000/40-2d
-Setting up in /mainfs/scratch/ml4n17/jm/24000/40-2d
-No postprocessing set up
-No stopping criteria, the simulation will run its course
-Making executable 
-Finished executable 
-Running executable 
-Run all python files for postprocessing
-Popping back up
-Number of proccessors :256
-Run folder            :/mainfs/scratch/ml4n17/jm/24000/48
-No read folder
-Creating /mainfs/scratch/ml4n17/jm/24000/48
-Setting up in /mainfs/scratch/ml4n17/jm/24000/48
-No postprocessing set up
-No stopping criteria, the simulation will run its course
-Making executable 
-Finished executable 
-Running executable 
-Run all python files for postprocessing
-Popping back up
-Number of proccessors :256
-Run folder            :/mainfs/scratch/ml4n17/jm/24000/48-2d
-No read folder
-Creating /mainfs/scratch/ml4n17/jm/24000/48-2d
-Setting up in /mainfs/scratch/ml4n17/jm/24000/48-2d
+Folder /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/24 exists!
+Moving contents to trash
+Setting up in /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/24
 No postprocessing set up
 No stopping criteria, the simulation will run its course
 Making executable 
@@ -573,22 +303,22 @@ Running executable
 Run all python files for postprocessing
 Popping back up
 ==============================================================================
-Running epilogue script on ruby050.
+Running epilogue script on ruby069.
 
-Submit time  : 2023-03-11T10:18:34
-Start time   : 2023-03-11T10:32:14
-End time     : 2023-03-11T23:19:18
-Elapsed time : 12:47:04 (Timelimit=2-12:00:00)
+Submit time  : 2023-03-17T15:34:24
+Start time   : 2023-03-18T00:26:40
+End time     : 2023-03-19T08:04:48
+Elapsed time : 1-07:38:05 (Timelimit=2-12:00:00)
 
-Job ID: 2784861
+Job ID: 2848777
 Cluster: i5
-User/Group: ml4n17/mm
+User/Group: jmom1n15/mm
 State: COMPLETED (exit code 0)
 Nodes: 4
 Cores per node: 64
-CPU Utilized: 134-11:20:24
-CPU Efficiency: 98.61% of 136-08:49:04 core-walltime
-Job Wall-clock time: 12:47:04
-Memory Utilized: 16.79 GB
-Memory Efficiency: 1.87% of 900.00 GB
+CPU Utilized: 336-14:13:33
+CPU Efficiency: 99.75% of 337-10:29:20 core-walltime
+Job Wall-clock time: 1-07:38:05
+Memory Utilized: 256.78 GB (estimated maximum)
+Memory Efficiency: 28.53% of 900.00 GB (3.52 GB/core)
 
