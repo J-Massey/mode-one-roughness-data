@@ -1,24 +1,17 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import os
 from pathlib import Path
 
-# from turtle import color
 import numpy as np
-
 from inout import read_forces, extract_zet
+from scipy.signal import savgol_filter
 from scipy.interpolate import interp1d
+
 from itertools import cycle
-
-from scipy.optimize import curve_fit
-
 import seaborn as sns
 from matplotlib import pyplot as plt
 from matplotlib.lines import Line2D
-from matplotlib import cm
-import matplotlib.colors as colors
-from scipy.signal import savgol_filter
-
+import scienceplots
 
 plt.style.use(["science"])
 plt.rcParams["font.size"] = "10.5"
