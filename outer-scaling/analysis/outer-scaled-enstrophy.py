@@ -32,7 +32,7 @@ def get_enstrophy(k_lam: np.ndarray, re: int, d: str = "") -> np.ndarray:
         t, p = read_forces(
             f"{Path.cwd().parent}/{re}/{k_lam[idx]}{d}/fort.9",
             interest="E",
-            direction="b",
+            direction="w",
         )
         raw_enstrophy = np.mean(p[t > 4])
         enstrophy[idx] = scale_enstrophy(raw_enstrophy, k_la, d)
@@ -42,8 +42,8 @@ def get_enstrophy(k_lam: np.ndarray, re: int, d: str = "") -> np.ndarray:
 def scale_enstrophy(raw_enstrophy: float, k_la: float, d: str) -> float:
     if k_la==0 or d=="-2d":
         # Scale the enstrophy using the SA_enstrophy_scaling function
-        scaled_enstrophy = raw_enstrophy * SA_enstrophy_scaling(1/1024)
-    elif k_la <= 20:
+        scaled_enstrophy = raw_enstrophy * SA_enstrophy_scaling(1/4/1024)
+    elif k_la <= 24:
         scaled_enstrophy = raw_enstrophy * SA_enstrophy_scaling((6/k_la)/4)
     else:
         scaled_enstrophy = raw_enstrophy * SA_enstrophy_scaling(0.03125)
@@ -67,7 +67,6 @@ def enst_plot_helper(ax: Axes, re_idx: int) -> None:
     # Use a linear interpolation to find the value of zeta for the given
     # roughness wavelength
     zet = interp1d(lam, zeta)(1 / k_lams)
-
     # Get the enstrophy for the given roughness wavelength
     enstrophy = get_enstrophy(k_lams, res[re_idx])
 
@@ -112,7 +111,8 @@ def plot_enstrophy_diff(ax):
     ax.set_xlabel(r"$\lambda/\delta$")
     ax.set_ylabel(r"$\Delta E/E_{s}$")
 
-    ax.set_xlim(0, 5)
+    # ax.set_xlim(0, 5)
+    ax.set_xscale("log")
 
     for idx, re in enumerate(res):
         enst_diff = (get_enstrophy(k_lams, re) - get_enstrophy(k_lams, re, "-2d"))/get_enstrophy(k_lams, re, "-2d")
@@ -131,9 +131,9 @@ def re_legend():
             [0],
             [0],
             ls="-",
-            label=r"$Re=6,000$",
-            c=sns.color_palette('colorblind')[0],
-            marker="^",
+            label=r"$Re=24,000$",
+            c=sns.color_palette('colorblind')[2],
+            marker="o",
             markerfacecolor="none",
         ),
         Line2D(
@@ -149,9 +149,9 @@ def re_legend():
             [0],
             [0],
             ls="-",
-            label=r"$Re=24,000$",
-            c=sns.color_palette('colorblind')[2],
-            marker="o",
+            label=r"$Re=6,000$",
+            c=sns.color_palette('colorblind')[0],
+            marker="^",
             markerfacecolor="none",
         ),
     ]
@@ -242,6 +242,6 @@ if __name__ == "__main__":
     cwd = os.getcwd()
     markers = ['^', 'p', 'o']
     res = [6000, 12000, 24000]
-    k_lams = np.arange(0, 24, 4)
+    k_lams = np.arange(0, 52, 4)
     main()
     
