@@ -7,7 +7,6 @@ from inout import read_forces, extract_zet
 from scipy.signal import savgol_filter
 from scipy.interpolate import interp1d
 
-from itertools import cycle
 import seaborn as sns
 from matplotlib import pyplot as plt
 from matplotlib.lines import Line2D
@@ -44,7 +43,7 @@ def plot_domain_test():
     axes[0].add_artist(legend1)
     axes[0].add_artist(legend2)
 
-    plt.savefig(f"{Path.cwd()}/figures/domain-test.pdf", bbox_inches="tight", dpi=200)
+    plt.savefig(f"{Path.cwd()}/figures/figure11.pdf", bbox_inches="tight", dpi=200)
 
 
 def domain_set(ax, re, color):
@@ -79,7 +78,7 @@ def interp_cycle(
     direction="x",
 ):
     t, ux, *_ = read_forces(
-        f"{Path.cwd().parent}/{crit_str}/1024/fort.9",
+        f"{Path.cwd().parent}/domain-test/{crit_str}/1024/fort.9",
         interest=interest,
         direction=direction,
     )
@@ -100,5 +99,4 @@ def main():
 
 
 if __name__ == "__main__":
-    marker = cycle(("^", "P", "s", "o", "X"))
     main()
