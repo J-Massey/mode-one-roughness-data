@@ -30,7 +30,7 @@ def get_enstrophy(k_lam: np.ndarray, re: int, d: str = "") -> np.ndarray:
     for idx, k_la in enumerate(k_lam):
         # Read in the enstrophy
         t, p = read_forces(
-            f"{Path.cwd().parent}/{re}/{k_lam[idx]}{d}/fort.9",
+            f"{Path.cwd().parent}/outer-scaling/{re}/{k_lam[idx]}{d}/fort.9",
             interest="E",
             direction="w",
         )
@@ -196,7 +196,7 @@ def get_thrust_avg(lam, re, d=""):
     thrust = np.empty(len(lam))
     for idx in range(len(lam)):
         t, p = read_forces(
-            f"{Path.cwd().parent}/{re}/{lam[idx]}{d}/fort.9",
+            f"{Path.cwd().parent}/outer-scaling/{re}/{lam[idx]}{d}/fort.9",
             interest="P",
             direction="x",
         )
