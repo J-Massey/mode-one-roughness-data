@@ -9,7 +9,7 @@ program swimming_plate
     implicit none
   !
   ! -- Physical parameters
-    real,parameter     :: Re = 12000
+    real,parameter     :: Re = 6000
   !
     real,parameter     :: c=1024.0, nu=c/Re
     real, parameter    :: finish=7
@@ -17,11 +17,11 @@ program swimming_plate
   !
   ! -- Hyperparameters
     real, parameter    :: thicc=0.03*c
-    real, parameter    :: A = 0.1*c, St_d = 0.3, k_x=16.0, k_z=16.0, h_roughness=0.01
+    real, parameter    :: A = 0.1*c, St_d = 0.3, k_x=18.0, k_z=18.0, h_roughness=0.01
     real, parameter    :: a_coeff = 0.28, &
                           b_coeff = 0.13, &
                           c_coeff = 0.05, &
-                          k_coeff = 0.7908799410075369, &
+                          k_coeff = 0.7821599776722797, &
                           f = St_d/(2.*A)
   !
   ! -- Dimensions
@@ -49,7 +49,7 @@ program swimming_plate
     if(ndims==2) then
       z = 0.0
     else
-      z = 0.09375
+      z = 0.08333333333333333
     end if
     m = [1.5,1.5, z]
     n = composite(c*m,prnt=root)

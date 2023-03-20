@@ -54,7 +54,5 @@ def new_f90_2d(zeta: float, lam: float):
         fileOutput.writelines(fileLines)
 
 
-if __name__ == "__main__":
-    lam, N = 1/18, 6
-    print(closest_a_n(N*lam*1024/4)/1024,delta_z(lam, N))
-
+# if __name__ == "__main__":
+#     new_f90_res(1.1, 1/14)
