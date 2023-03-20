@@ -20,7 +20,7 @@ def new_f90_res(zeta: float, lam: float, N=6):
         fileOutput.writelines(fileLines)
 
 
-def delta_z(lam, N):
+def delta_z(lam, N) -> float:
     """
     Find the appropriate grid spacing for the given wavelength and number.
     """
