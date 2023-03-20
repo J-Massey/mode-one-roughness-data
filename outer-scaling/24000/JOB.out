@@ -1,7 +1,7 @@
-Running SLURM prolog script on ruby069.cluster.local
+Running SLURM prolog script on ruby017.cluster.local
 ===============================================================================
-Job started on Sat Mar 18 00:26:43 GMT 2023
-Job ID          : 2848777
+Job started on Sun Mar 19 12:51:40 GMT 2023
+Job ID          : 2862229
 Job name        : 24k
 WorkDir         : /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000
 Command         : /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/subOpt
@@ -9,10 +9,10 @@ Partition       : amd
 Num hosts       : 4
 Num cores       : 256
 Num of tasks    : 256
-Hosts allocated : ruby[069-071,073]
+Hosts allocated : ruby[017,019,021,030]
 Job Output Follows ...
 ===============================================================================
-Starting calculation at Sat Mar 18 00:26:43 GMT 2023
+Starting calculation at Sun Mar 19 12:51:40 GMT 2023
 ---------------------------------------------------------------
 make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
 make: `libgeom.a' is up to date.
@@ -41,10 +41,10 @@ composite(384.0)=384
  Starting time update loop
  -----------------------------------
 Time:          0.000
-Time:          1.000
+Time:          1.001
 Time:          2.001
-Time:          3.001
-Time:          4.000
+Time:          3.000
+Time:          4.002
 Time:          5.001
 Time:          6.001
  Loop complete: writing restart files and exiting
@@ -77,248 +77,8 @@ composite(192.0)=192
  -----------------------------------
 Time:          0.000
 Time:          1.001
-Time:          2.001
-Time:          3.000
-Time:          4.001
-Time:          5.001
-Time:          6.001
- Loop complete: writing restart files and exiting
- -----------------------------------
-make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
-make: `libgeom.a' is up to date.
-make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
-make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
-make: `libfluid.a' is up to date.
-make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
-mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -I/home/jmom1n15/Lotus/solver/src/oop -I/home/jmom1n15/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
-mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/jmom1n15/Lotus/solver/src/oop/. -L/home/jmom1n15/Lotus/solver/src/geom/. -lfluid -lgeom
- Setting up the grid, body and fluid
- -----------------------------------
-composite(1536.0)=1536
-  products :3*2**9
-composite(1536.0)=1536
-  products :3*2**9
-composite(128.0)=128
-  products :1*2**7
- Stretched grid sections:
-  negative: r= 0.6%, h_max=12.5
-  positive: r= 0.6%, h_max=9.9
- grid symmetry:  F
- Stretched grid sections:
-  negative: r= 0.4%, h_max=6.0
-  positive: r= 0.4%, h_max=6.0
- grid symmetry:  T
- Starting time update loop
- -----------------------------------
-Time:          0.000
-Time:          1.000
 Time:          2.000
 Time:          3.001
-Time:          4.000
-Time:          5.001
+Time:          4.001
+Time:          5.000
 Time:          6.000
- Loop complete: writing restart files and exiting
- -----------------------------------
-make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
-make: `libgeom.a' is up to date.
-make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
-make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
-make: `libfluid.a' is up to date.
-make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
-mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -I/home/jmom1n15/Lotus/solver/src/oop -I/home/jmom1n15/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
-mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/jmom1n15/Lotus/solver/src/oop/. -L/home/jmom1n15/Lotus/solver/src/geom/. -lfluid -lgeom
- Setting up the grid, body and fluid
- -----------------------------------
-composite(1536.0)=1536
-  products :3*2**9
-composite(1536.0)=1536
-  products :3*2**9
-composite(96.0)=96
-  products :3*2**5
- Stretched grid sections:
-  negative: r= 0.6%, h_max=12.5
-  positive: r= 0.6%, h_max=9.9
- grid symmetry:  F
- Stretched grid sections:
-  negative: r= 0.4%, h_max=6.0
-  positive: r= 0.4%, h_max=6.0
- grid symmetry:  T
- Starting time update loop
- -----------------------------------
-Time:          0.000
-Time:          1.001
-Time:          2.001
-Time:          3.001
-Time:          4.001
-Time:          5.000
-Time:          6.002
- Loop complete: writing restart files and exiting
- -----------------------------------
-make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
-make: `libgeom.a' is up to date.
-make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
-make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
-make: `libfluid.a' is up to date.
-make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
-mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -I/home/jmom1n15/Lotus/solver/src/oop -I/home/jmom1n15/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
-mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/jmom1n15/Lotus/solver/src/oop/. -L/home/jmom1n15/Lotus/solver/src/geom/. -lfluid -lgeom
- Setting up the grid, body and fluid
- -----------------------------------
-composite(1536.0)=1536
-  products :3*2**9
-composite(1536.0)=1536
-  products :3*2**9
-composite(76.8)=80
-  products :5*2**4
- Stretched grid sections:
-  negative: r= 0.6%, h_max=12.5
-  positive: r= 0.6%, h_max=9.9
- grid symmetry:  F
- Stretched grid sections:
-  negative: r= 0.4%, h_max=6.0
-  positive: r= 0.4%, h_max=6.0
- grid symmetry:  T
- Starting time update loop
- -----------------------------------
-Time:          0.000
-Time:          1.000
-Time:          2.001
-Time:          3.001
-Time:          4.001
-Time:          5.000
-Time:          6.001
- Loop complete: writing restart files and exiting
- -----------------------------------
-make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
-make: `libgeom.a' is up to date.
-make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
-make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
-make: `libfluid.a' is up to date.
-make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
-mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -I/home/jmom1n15/Lotus/solver/src/oop -I/home/jmom1n15/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
-mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/jmom1n15/Lotus/solver/src/oop/. -L/home/jmom1n15/Lotus/solver/src/geom/. -lfluid -lgeom
- Setting up the grid, body and fluid
- -----------------------------------
-composite(1536.0)=1536
-  products :3*2**9
-composite(1536.0)=1536
-  products :3*2**9
-composite(64.0)=64
-  products :1*2**6
- Stretched grid sections:
-  negative: r= 0.6%, h_max=12.5
-  positive: r= 0.6%, h_max=9.9
- grid symmetry:  F
- Stretched grid sections:
-  negative: r= 0.4%, h_max=6.0
-  positive: r= 0.4%, h_max=6.0
- grid symmetry:  T
- Starting time update loop
- -----------------------------------
-Time:          0.000
-Time:          1.001
-Time:          2.002
-Time:          3.002
-Time:          4.001
-Time:          5.001
-Time:          6.001
- Loop complete: writing restart files and exiting
- -----------------------------------
-Number of proccessors :256
-Run folder            :/ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/4
-No read folder
-Folder /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/4 exists!
-Moving contents to trash
-Setting up in /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/4
-No postprocessing set up
-No stopping criteria, the simulation will run its course
-Making executable 
-Finished executable 
-Running executable 
-Run all python files for postprocessing
-Popping back up
-Number of proccessors :256
-Run folder            :/ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/8
-No read folder
-Folder /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/8 exists!
-Moving contents to trash
-Setting up in /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/8
-No postprocessing set up
-No stopping criteria, the simulation will run its course
-Making executable 
-Finished executable 
-Running executable 
-Run all python files for postprocessing
-Popping back up
-Number of proccessors :256
-Run folder            :/ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/12
-No read folder
-Folder /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/12 exists!
-Moving contents to trash
-Setting up in /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/12
-No postprocessing set up
-No stopping criteria, the simulation will run its course
-Making executable 
-Finished executable 
-Running executable 
-Run all python files for postprocessing
-Popping back up
-Number of proccessors :256
-Run folder            :/ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/16
-No read folder
-Folder /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/16 exists!
-Moving contents to trash
-Setting up in /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/16
-No postprocessing set up
-No stopping criteria, the simulation will run its course
-Making executable 
-Finished executable 
-Running executable 
-Run all python files for postprocessing
-Popping back up
-Number of proccessors :256
-Run folder            :/ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/20
-No read folder
-Folder /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/20 exists!
-Moving contents to trash
-Setting up in /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/20
-No postprocessing set up
-No stopping criteria, the simulation will run its course
-Making executable 
-Finished executable 
-Running executable 
-Run all python files for postprocessing
-Popping back up
-Number of proccessors :256
-Run folder            :/ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/24
-No read folder
-Folder /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/24 exists!
-Moving contents to trash
-Setting up in /ssdfs/users/jmom1n15/mode-one-roughness-data/outer-scaling/24000/24
-No postprocessing set up
-No stopping criteria, the simulation will run its course
-Making executable 
-Finished executable 
-Running executable 
-Run all python files for postprocessing
-Popping back up
-==============================================================================
-Running epilogue script on ruby069.
-
-Submit time  : 2023-03-17T15:34:24
-Start time   : 2023-03-18T00:26:40
-End time     : 2023-03-19T08:04:48
-Elapsed time : 1-07:38:05 (Timelimit=2-12:00:00)
-
-Job ID: 2848777
-Cluster: i5
-User/Group: jmom1n15/mm
-State: COMPLETED (exit code 0)
-Nodes: 4
-Cores per node: 64
-CPU Utilized: 336-14:13:33
-CPU Efficiency: 99.75% of 337-10:29:20 core-walltime
-Job Wall-clock time: 1-07:38:05
-Memory Utilized: 256.78 GB (estimated maximum)
-Memory Efficiency: 28.53% of 900.00 GB (3.52 GB/core)
-

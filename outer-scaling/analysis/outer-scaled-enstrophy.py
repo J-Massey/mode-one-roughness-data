@@ -32,7 +32,7 @@ def get_enstrophy(k_lam: np.ndarray, re: int, d: str = "") -> np.ndarray:
         t, p = read_forces(
             f"{Path.cwd().parent}/{re}/{k_lam[idx]}{d}/fort.9",
             interest="E",
-            direction="w",
+            direction="b",
         )
         raw_enstrophy = np.mean(p[t > 4])
         enstrophy[idx] = scale_enstrophy(raw_enstrophy, k_la, d)
