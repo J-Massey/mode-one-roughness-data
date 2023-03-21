@@ -20,7 +20,7 @@ plt.rcParams["font.size"] = "10.5"
 def SA_enstrophy_scaling(span=0.03125):
     return (
         1 / 0.1             # A
-        / (1 * 1024/4.)     # L
+        / (1 * 1024)     # L
         / (span * 1024)  # span
       )
 
@@ -42,11 +42,11 @@ def get_enstrophy(k_lam: np.ndarray, re: int, d: str = "") -> np.ndarray:
 def scale_enstrophy(raw_enstrophy: float, k_la: float, d: str) -> float:
     if k_la==0 or d=="-2d":
         # Scale the enstrophy using the SA_enstrophy_scaling function
-        scaled_enstrophy = raw_enstrophy * SA_enstrophy_scaling(1/4/1024)
+        scaled_enstrophy = raw_enstrophy * SA_enstrophy_scaling(1/1024)
     elif k_la <= 24:
-        scaled_enstrophy = raw_enstrophy * SA_enstrophy_scaling((6/k_la)/4)
+        scaled_enstrophy = raw_enstrophy * SA_enstrophy_scaling((6/k_la))
     else:
-        scaled_enstrophy = raw_enstrophy * SA_enstrophy_scaling(0.03125)
+        scaled_enstrophy = raw_enstrophy * SA_enstrophy_scaling(0.03125*4)
     return scaled_enstrophy
 
 
@@ -54,6 +54,7 @@ def plot_enstrophy_3d(ax: Axes) -> None:
     ax.set_xlabel(r"$\zeta$")
     ax.set_ylabel(r"$E$")
     ax.set_xlim(1, 2)
+    ax.set_ylim(0.05, 0.6)
 
     for idx, _ in enumerate(res):
         enst_plot_helper(ax, idx)
@@ -85,6 +86,7 @@ def plot_enstrophy_2d(ax: Axes) -> None:
     ax.set_xlabel(r"$\zeta$")
     ax.set_ylabel(r"$E_s$")
     ax.set_xlim(1, 2)
+    ax.set_ylim(0.05, 0.6)
 
     for idx, _ in enumerate(res):
         enst_plot_helper_2d(ax, idx)
@@ -118,7 +120,7 @@ def plot_enstrophy_diff(ax):
         enst_diff = (get_enstrophy(k_lams, re) - get_enstrophy(k_lams, re, "-2d"))/get_enstrophy(k_lams, re, "-2d")
 
         ax.scatter(
-            1 / k_lams / 0.06,  # 0.06 is 2*delta
+            1 / (k_lams+0.5) / 0.06,  # 0.06 is 2*delta
             enst_diff,
             facecolor="None",
             marker=markers[idx],
