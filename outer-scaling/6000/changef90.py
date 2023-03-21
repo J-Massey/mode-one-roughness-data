@@ -13,8 +13,8 @@ def new_f90_res(zeta: float, lam: float, N=6):
     fileLines[19] = f"    real, parameter    :: A = 0.1*c, St_d = 0.3, k_x={1/lam}, k_z={1/lam}, h_roughness=0.01\n"
     fileLines[23] = f"                          k_coeff = {1/zeta}, &\n"
     fileLines[27] = f"    integer            :: n(3), ndims=3\n"
-    fileLines[51] = f"      z = {closest_a_n(N*lam*1024/4)/1024}\n"
-    fileLines[57] = f"    if(ndims==3) xg(3)%h = {delta_z(lam, N)}\n"
+    # fileLines[51] = f"      z = {closest_a_n(N*lam*1024/4)/1024}\n"
+    # fileLines[57] = f"    if(ndims==3) xg(3)%h = {delta_z(lam, N)}\n"
 
     with open("lotus.f90","w") as fileOutput:
         fileOutput.writelines(fileLines)
@@ -39,6 +39,7 @@ def closest_a_n(num):
     diff[diff>0] = -np.inf
     idx = np.unravel_index(np.argmax(diff, axis=None), diff.shape)
     return a_guess[idx[1]]* 2 ** np.log2(n[idx[0]])
+
 
 
 def new_f90_2d(zeta: float, lam: float):

@@ -9,7 +9,7 @@ program swimming_plate
     implicit none
   !
   ! -- Physical parameters
-    real,parameter     :: Re = 12000
+    real,parameter     :: Re = 24000
   !
     real,parameter     :: c=1024.0, nu=c/Re
     real, parameter    :: finish=7
@@ -17,11 +17,11 @@ program swimming_plate
   !
   ! -- Hyperparameters
     real, parameter    :: thicc=0.03*c
-    real, parameter    :: A = 0.1*c, St_d = 0.3, k_x=32.0, k_z=32.0, h_roughness=0.01
+    real, parameter    :: A = 0.1*c, St_d = 0.3, k_x=26.0, k_z=26.0, h_roughness=0.01
     real, parameter    :: a_coeff = 0.28, &
                           b_coeff = 0.13, &
                           c_coeff = 0.05, &
-                          k_coeff = 0.6919820704376223, &
+                          k_coeff = 0.7380203821812501, &
                           f = St_d/(2.*A)
   !
   ! -- Dimensions
@@ -49,13 +49,13 @@ program swimming_plate
     if(ndims==2) then
       z = 0.0
     else
-      z = 0.046875
+      z = 0.057692307692307696
     end if
     m = [1.5,1.5, z]
     n = composite(c*m,prnt=root)
     call xg(1)%stretch(n(1), -2.0*c, -.5*c, 2.5*c, 7.0*c,  h_min=4., h_max=10., prnt=root)
     call xg(2)%stretch(n(2), -2.0*c, -0.9*c, 0.9*c, 2.0*c, h_min=2., prnt=root)
-    if(ndims==3) xg(3)%h = 4.0
+    if(ndims==3) xg(3)%h = 4.
   !
   ! -- Call the geometry and kinematics
 

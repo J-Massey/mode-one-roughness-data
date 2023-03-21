@@ -17,7 +17,7 @@ program swimming_plate
   !
   ! -- Hyperparameters
     real, parameter    :: thicc=0.03*c
-    real, parameter    :: A = 0.1*c, St_d = 0.3, k_x=48.5, k_z=48.0, h_roughness=0.01
+    real, parameter    :: A = 0.1*c, St_d = 0.3, k_x=48.0, k_z=48.0, h_roughness=0.01
     real, parameter    :: a_coeff = 0.28, &
                           b_coeff = 0.13, &
                           c_coeff = 0.05, &
@@ -55,7 +55,7 @@ program swimming_plate
     n = composite(c*m,prnt=root)
     call xg(1)%stretch(n(1), -2.0*c, -.5*c, 2.5*c, 7.0*c,  h_min=4., h_max=10., prnt=root)
     call xg(2)%stretch(n(2), -2.0*c, -0.9*c, 0.9*c, 2.0*c, h_min=2., prnt=root)
-    if(ndims==3) xg(3)%h = 4.
+    if(ndims==3) xg(3)%h = 4.0
   !
   ! -- Call the geometry and kinematics
 
@@ -80,11 +80,11 @@ program swimming_plate
       vforce = 2.*nu*geom%vforce(flow%velocity)/(c*n(3)*xg(3)%h)
       vforce1 = 2.*nu*geom%vforce_f(flow%velocity)/(c*n(3)*xg(3)%h)
       vforce2 = 2.*nu*geom%vforce_s(flow%velocity)/(c*n(3)*xg(3)%h)
-      enstrophy_body = flow%velocity%enstrophy(lcorn=c*[-0.25,-0.5,0.],ucorn=c*[2.0,0.5,0.125])
-      enstrophy_wake = flow%velocity%enstrophy(lcorn=c*[1.1,-0.5,0.],ucorn=c*[2.1,0.5,0.125])
+      enstrophy_body = flow%velocity%enstrophy(lcorn=c*[-0.25,-0.5,0.],ucorn=c*[2.0,0.5,2.])
+      enstrophy_wake = flow%velocity%enstrophy(lcorn=c*[1.1,-0.5,0.],ucorn=c*[2.1,0.5,2.])
       enstrophy = flow%velocity%enstrophy()
-      tke_body = flow%velocity%tke(lcorn=c*[-0.25,-0.5,0.],ucorn=c*[2.0,0.5,0.125])
-      tke_wake = flow%velocity%tke(lcorn=c*[1.1,-0.5,0.],ucorn=c*[2.1,0.5,0.125])
+      tke_body = flow%velocity%tke(lcorn=c*[-0.25,-0.5,0.],ucorn=c*[2.0,0.5,2.])
+      tke_wake = flow%velocity%tke(lcorn=c*[1.1,-0.5,0.],ucorn=c*[2.1,0.5,2.])
       tke = flow%velocity%tke()
       
       write(9,'(f10.4,f8.4,4e16.8,4e16.8,4e16.8,4e16.8,4e16.8,4e16.8)')&
