@@ -18,42 +18,30 @@ plt.style.use(["science"])
 plt.rcParams["font.size"] = "10.5"
 
 
-def get_enstrophy(k_lam: np.ndarray, re: int, d: str = "") -> np.ndarray:
-    enstrophy = np.empty(len(k_lam))
+def get_forces(k_lam: np.ndarray, re: int = 12000, f : str = "p", d: str = "x", dim: str = "") -> np.ndarray:
+    force = np.empty(len(k_lam))
     for idx, k_la in enumerate(k_lam):
-        # Read in the enstrophy
+        # Read in the force
         t, p = read_forces(
-            f"{Path.cwd().parent}/outer-scaling/{re}/{k_lam[idx]}{d}/fort.9",
-            interest="E",
-            direction="w",
+            f"{Path.cwd().parent}/outer-scaling/{re}/{k_lam[idx]}{dim}/fort.9",
+            interest=f,
+            direction=d,
         )
-        raw_enstrophy = np.mean(p[t > 4])
-        enstrophy[idx] = scale_enstrophy(raw_enstrophy, k_la, d)
-    return enstrophy
+        force[idx] = np.mean(p[t > 4])
+    return force
 
 
-def scale_enstrophy(raw_enstrophy: float, k_la: float, d: str) -> float:
-    if k_la==0 or d=="-2d":
-        # Scale the enstrophy using the SA_enstrophy_scaling function
-        scaled_enstrophy = raw_enstrophy * SA_enstrophy_scaling(1/1024)
-    elif k_la <= 24:
-        scaled_enstrophy = raw_enstrophy * SA_enstrophy_scaling((6/k_la))
-    else:
-        scaled_enstrophy = raw_enstrophy * SA_enstrophy_scaling(0.03125*4)
-    return scaled_enstrophy
-
-
-def plot_enstrophy_3d(ax: Axes) -> None:
+def plot_thrust(ax: Axes) -> None:
     ax.set_xlabel(r"$\zeta$")
-    ax.set_ylabel(r"$E$")
+    ax.set_ylabel(r"$\overline{C_T}$")
     ax.set_xlim(1, 2)
-    ax.set_ylim(0.05, 0.6)
+    ax.set_ylim(-0.01, 0.085)
 
     for idx, _ in enumerate(res):
-        enst_plot_helper(ax, idx)
+        thrust_plt_helper(ax, idx)
 
 
-def enst_plot_helper(ax: Axes, re_idx: int) -> None:
+def thrust_plt_helper(ax: Axes, re_idx: int) -> None:
     # Load the values of zeta (the wave speed) and
     # lambda (the roughness wavelength) from the data file
     zeta, lam = np.load(f"{cwd}/zeta_lambda.npy", allow_pickle=True)
@@ -61,64 +49,73 @@ def enst_plot_helper(ax: Axes, re_idx: int) -> None:
     # Use a linear interpolation to find the value of zeta for the given
     # roughness wavelength
     zet = interp1d(lam, zeta)(1 / k_lams)
-    # Get the enstrophy for the given roughness wavelength
-    enstrophy = get_enstrophy(k_lams, res[re_idx])
+    # Get the force for the given roughness wavelength
+    force = get_forces(k_lams)
 
-    # Plot the enstrophy as a function of zeta
+    # Plot the force as a function of zeta
     ax.plot(
         zet,
-        enstrophy,
+        force,
         markerfacecolor="None",
-        marker=markers[re_idx],
+        marker='d',
         color=sns.color_palette("colorblind")[re_idx],
+        ls="-",
+    )
+    force = get_forces(k_lams, dim="-2d")
+
+    # Plot the force as a function of zeta
+    ax.plot(
+        zet,
+        force,
+        markerfacecolor="None",
+        marker='s',
+        color='grey',
         ls="-",
     )
 
 
-def plot_enstrophy_2d(ax: Axes) -> None:
+def plot_power(ax: Axes) -> None:
     ax.set_xlabel(r"$\zeta$")
-    ax.set_ylabel(r"$E_s$")
+    ax.set_ylabel(r"$\overline{C_P}$")
     ax.set_xlim(1, 2)
-    ax.set_ylim(0.05, 0.6)
+    ax.set_ylim(0, 0.4)
 
     for idx, _ in enumerate(res):
-        enst_plot_helper_2d(ax, idx)
+        power_plt_helper(ax, idx)
 
 
-def enst_plot_helper_2d(ax: Axes, re_idx: int) -> None:
+def power_plt_helper(ax: Axes, re_idx: int) -> None:
+    # Load the values of zeta (the wave speed) and
+    # lambda (the roughness wavelength) from the data file
     zeta, lam = np.load(f"{cwd}/zeta_lambda.npy", allow_pickle=True)
+
+    # Use a linear interpolation to find the value of zeta for the given
+    # roughness wavelength
     zet = interp1d(lam, zeta)(1 / k_lams)
+    # Get the force for the given roughness wavelength
+    force = get_forces(k_lams, f="cp", d="")
 
-    enstrophy_2d = get_enstrophy(k_lams, res[re_idx], d='-2d')
-
+    # Plot the force as a function of zeta
     ax.plot(
         zet,
-        enstrophy_2d,
+        force,
         markerfacecolor="None",
-        marker=markers[re_idx],
+        marker='d',
+        color=sns.color_palette("colorblind")[re_idx],
+        ls="-",
+    )
+    force = get_forces(k_lams, f="cp", d="", dim="-2d")
+
+    # Plot the force as a function of zeta
+    ax.plot(
+        zet,
+        force,
+        markerfacecolor="None",
+        marker='s',
         color='grey',
-        alpha=0.8,
-        ls="-.",
+        ls="-",
     )
 
-
-def plot_enstrophy_diff(ax):
-    ax.set_xlabel(r"$\lambda/\delta$")
-    ax.set_ylabel(r"$\Delta E/E_{s}$")
-
-    # ax.set_xlim(0, 5)
-    ax.set_xscale("log")
-
-    for idx, re in enumerate(res):
-        enst_diff = (get_enstrophy(k_lams, re) - get_enstrophy(k_lams, re, "-2d"))/get_enstrophy(k_lams, re, "-2d")
-
-        ax.scatter(
-            1 / (k_lams+0.5) / 0.06,  # 0.06 is 2*delta
-            enst_diff,
-            facecolor="None",
-            marker=markers[idx],
-            color=sns.color_palette("colorblind")[idx],
-        )
 
 def re_legend():
     legend_elements = [
@@ -213,19 +210,19 @@ def read_csv(fn):
 
 
 def plot_wrapper():
-    fig, axd = plt.subplot_mosaic([['upper left', 'upper right'],
-                               ['lower', 'lower']],
+    fig, axd = plt.subplot_mosaic([[0, 1],
+                               [2, '3]],
                               figsize=(5., 5.), layout="constrained")
-    plot_enstrophy_3d(axd['upper left']) # type: ignore
-    plot_enstrophy_2d(axd['upper right']) # type: ignore
-    plot_enstrophy_diff(axd['lower'])  # type: ignore
+    plot_thrust(axd[1]) # type: ignore
+    plot_power(axd[0]) # type: ignore
+    # plot_force_diff(axd['lower'])  # type: ignore
 
     legend1 = axd['lower'].legend(handles=re_legend(), loc=4) # type: ignore
     legend2 = axd['lower'].legend(handles=smooth_rough_legend(), loc=1) # type: ignore
     axd['lower'].add_artist(legend1) # type: ignore
 
     plt.savefig(
-        f"{os.getcwd()}/figures/figure8.pdf", bbox_inches="tight", dpi=300
+        f"{os.getcwd()}/figures/figure7.pdf", bbox_inches="tight", dpi=300
     )
 
 
@@ -237,6 +234,7 @@ if __name__ == "__main__":
     cwd = os.getcwd()
     markers = ['^', 'p', 'o']
     res = [6000, 12000, 24000]
+    res = [12000]
     k_lams = np.arange(0, 52, 4)
     main()
     
