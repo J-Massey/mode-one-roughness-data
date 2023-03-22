@@ -18,7 +18,7 @@ plt.style.use(["science"])
 plt.rcParams["font.size"] = "10.5"
 
 
-def get_forces(k_lam: np.ndarray, re: int = 12000, f : str = "p", d: str = "x", dim: str = "") -> np.ndarray:
+def get_forces(k_lam: np.ndarray, re: int, f : str = "p", d: str = "x", dim: str = "") -> np.ndarray:
     force = np.empty(len(k_lam))
     for idx, k_la in enumerate(k_lam):
         # Read in the force
@@ -31,11 +31,24 @@ def get_forces(k_lam: np.ndarray, re: int = 12000, f : str = "p", d: str = "x", 
     return force
 
 
+def get_rms(k_lam: np.ndarray, re: int, f : str = "p", d: str = "x", dim: str = "") -> np.ndarray:
+    force = np.empty(len(k_lam))
+    for idx, k_la in enumerate(k_lam):
+        # Read in the force
+        t, p = read_forces(
+            f"{Path.cwd().parent}/outer-scaling/{re}/{k_lam[idx]}{dim}/fort.9",
+            interest=f,
+            direction=d,
+        )
+        force[idx] = np.std(p[t > 4])
+    return force
+
+
 def plot_thrust(ax: Axes) -> None:
     ax.set_xlabel(r"$\zeta$")
     ax.set_ylabel(r"$\overline{C_T}$")
-    ax.set_xlim(1, 2)
-    ax.set_ylim(-0.01, 0.085)
+    ax.set_xlim(1, 2.35)
+    # ax.set_ylim(-0.01, 0.085)
 
     for idx, _ in enumerate(res):
         thrust_plt_helper(ax, idx)
@@ -50,7 +63,7 @@ def thrust_plt_helper(ax: Axes, re_idx: int) -> None:
     # roughness wavelength
     zet = interp1d(lam, zeta)(1 / k_lams)
     # Get the force for the given roughness wavelength
-    force = get_forces(k_lams)
+    force = get_forces(k_lams, res[re_idx])
 
     # Plot the force as a function of zeta
     ax.plot(
@@ -61,7 +74,85 @@ def thrust_plt_helper(ax: Axes, re_idx: int) -> None:
         color=sns.color_palette("colorblind")[re_idx],
         ls="-",
     )
-    force = get_forces(k_lams, dim="-2d")
+    force = get_forces(k_lams, res[re_idx], dim="-2d")
+
+    # Plot the force as a function of zeta
+    ax.plot(
+        zet,
+        force,
+        markerfacecolor="None",
+        marker='s',
+        color='grey',
+        ls="-",
+    )
+
+
+def plot_thrust_rms(ax: Axes) -> None:
+    ax.set_xlabel(r"$\zeta$")
+    ax.set_ylabel(r"$RMS(C_T)$")
+    ax.set_xlim(1, 2.35)
+    # ax.set_ylim(-0.01, 0.085)
+
+    for idx, _ in enumerate(res):
+        rms_thrust_plt_helper(ax, idx)
+
+
+def rms_thrust_plt_helper(ax: Axes, re_idx: int) -> None:
+
+    zeta, lam = np.load(f"{cwd}/zeta_lambda.npy", allow_pickle=True)
+
+    zet = interp1d(lam, zeta)(1 / k_lams)
+    force = get_rms(k_lams, res[re_idx])
+
+    # Plot the force as a function of zeta
+    ax.plot(
+        zet,
+        force,
+        markerfacecolor="None",
+        marker='d',
+        color=sns.color_palette("colorblind")[re_idx],
+        ls="-",
+    )
+    force = get_rms(k_lams, res[re_idx], dim="-2d")
+
+    # Plot the force as a function of zeta
+    ax.plot(
+        zet,
+        force,
+        markerfacecolor="None",
+        marker='s',
+        color='grey',
+        ls="-",
+    )
+
+
+def plot_lift_rms(ax: Axes) -> None:
+    ax.set_xlabel(r"$\zeta$")
+    ax.set_ylabel(r"$RMS(C_L)$")
+    ax.set_xlim(1, 2.35)
+    # ax.set_ylim(-0.01, 0.085)
+
+    for idx, _ in enumerate(res):
+        rms_lift_plt_helper(ax, idx)
+
+
+def rms_lift_plt_helper(ax: Axes, re_idx: int) -> None:
+
+    zeta, lam = np.load(f"{cwd}/zeta_lambda.npy", allow_pickle=True)
+
+    zet = interp1d(lam, zeta)(1 / k_lams)
+    force = get_rms(k_lams, res[re_idx], d="y")
+
+    # Plot the force as a function of zeta
+    ax.plot(
+        zet,
+        force,
+        markerfacecolor="None",
+        marker='d',
+        color=sns.color_palette("colorblind")[re_idx],
+        ls="-",
+    )
+    force = get_rms(k_lams, res[re_idx], d="y", dim="-2d")
 
     # Plot the force as a function of zeta
     ax.plot(
@@ -77,8 +168,8 @@ def thrust_plt_helper(ax: Axes, re_idx: int) -> None:
 def plot_power(ax: Axes) -> None:
     ax.set_xlabel(r"$\zeta$")
     ax.set_ylabel(r"$\overline{C_P}$")
-    ax.set_xlim(1, 2)
-    ax.set_ylim(0, 0.4)
+    ax.set_xlim(1, 2.35)
+    # ax.set_ylim(0, 0.5)
 
     for idx, _ in enumerate(res):
         power_plt_helper(ax, idx)
@@ -93,7 +184,7 @@ def power_plt_helper(ax: Axes, re_idx: int) -> None:
     # roughness wavelength
     zet = interp1d(lam, zeta)(1 / k_lams)
     # Get the force for the given roughness wavelength
-    force = get_forces(k_lams, f="cp", d="")
+    force = get_forces(k_lams, res[re_idx], f="cp", d="")
 
     # Plot the force as a function of zeta
     ax.plot(
@@ -104,7 +195,7 @@ def power_plt_helper(ax: Axes, re_idx: int) -> None:
         color=sns.color_palette("colorblind")[re_idx],
         ls="-",
     )
-    force = get_forces(k_lams, f="cp", d="", dim="-2d")
+    force = get_forces(k_lams, res[re_idx], f="cp", d="", dim="-2d")
 
     # Plot the force as a function of zeta
     ax.plot(
@@ -211,15 +302,16 @@ def read_csv(fn):
 
 def plot_wrapper():
     fig, axd = plt.subplot_mosaic([[0, 1],
-                               [2, '3]],
+                               [2, 3]],
                               figsize=(5., 5.), layout="constrained")
-    plot_thrust(axd[1]) # type: ignore
     plot_power(axd[0]) # type: ignore
-    # plot_force_diff(axd['lower'])  # type: ignore
+    plot_lift_rms(axd[1]) # type: ignore
+    plot_thrust(axd[2]) # type: ignore
+    plot_thrust_rms(axd[3]) # type: ignore
 
-    legend1 = axd['lower'].legend(handles=re_legend(), loc=4) # type: ignore
-    legend2 = axd['lower'].legend(handles=smooth_rough_legend(), loc=1) # type: ignore
-    axd['lower'].add_artist(legend1) # type: ignore
+    # legend1 = axd['lower'].legend(handles=re_legend(), loc=4) # type: ignore
+    # legend2 = axd['lower'].legend(handles=smooth_rough_legend(), loc=1) # type: ignore
+    # axd['lower'].add_artist(legend1) # type: ignore
 
     plt.savefig(
         f"{os.getcwd()}/figures/figure7.pdf", bbox_inches="tight", dpi=300
@@ -234,7 +326,7 @@ if __name__ == "__main__":
     cwd = os.getcwd()
     markers = ['^', 'p', 'o']
     res = [6000, 12000, 24000]
-    res = [12000]
-    k_lams = np.arange(0, 52, 4)
+    res = [6000]
+    k_lams = np.arange(0, 56, 4)
     main()
     
