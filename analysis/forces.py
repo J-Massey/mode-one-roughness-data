@@ -64,6 +64,7 @@ def thrust_plt_helper(ax: Axes, re_idx: int) -> None:
     zet = interp1d(lam, zeta)(1 / k_lams)
     # Get the force for the given roughness wavelength
     force = get_forces(k_lams, res[re_idx])
+    # [print(f"${f:.4f}$") for f in force]
 
     # Plot the force as a function of zeta
     ax.plot(
@@ -75,6 +76,7 @@ def thrust_plt_helper(ax: Axes, re_idx: int) -> None:
         ls="-",
     )
     force = get_forces(k_lams, res[re_idx], dim="-2d")
+    # [print(f"${f:.4f}$") for f in force]
 
     # Plot the force as a function of zeta
     ax.plot(
@@ -83,7 +85,7 @@ def thrust_plt_helper(ax: Axes, re_idx: int) -> None:
         markerfacecolor="None",
         marker='s',
         color='grey',
-        ls="-",
+        ls="-.",
     )
 
 
@@ -122,7 +124,7 @@ def rms_thrust_plt_helper(ax: Axes, re_idx: int) -> None:
         markerfacecolor="None",
         marker='s',
         color='grey',
-        ls="-",
+        ls="-.",
     )
 
 
@@ -161,7 +163,7 @@ def rms_lift_plt_helper(ax: Axes, re_idx: int) -> None:
         markerfacecolor="None",
         marker='s',
         color='grey',
-        ls="-",
+        ls="-.",
     )
 
 
@@ -185,6 +187,7 @@ def power_plt_helper(ax: Axes, re_idx: int) -> None:
     zet = interp1d(lam, zeta)(1 / k_lams)
     # Get the force for the given roughness wavelength
     force = get_forces(k_lams, res[re_idx], f="cp", d="")
+    # [print(f"${f:.4f}$") for f in force]
 
     # Plot the force as a function of zeta
     ax.plot(
@@ -196,6 +199,7 @@ def power_plt_helper(ax: Axes, re_idx: int) -> None:
         ls="-",
     )
     force = get_forces(k_lams, res[re_idx], f="cp", d="", dim="-2d")
+    [print(f"${f:.2f}$") for f in zet]
 
     # Plot the force as a function of zeta
     ax.plot(
@@ -204,7 +208,7 @@ def power_plt_helper(ax: Axes, re_idx: int) -> None:
         markerfacecolor="None",
         marker='s',
         color='grey',
-        ls="-",
+        ls="-.",
     )
 
 
@@ -326,7 +330,7 @@ if __name__ == "__main__":
     cwd = os.getcwd()
     markers = ['^', 'p', 'o']
     res = [6000, 12000, 24000]
-    res = [6000]
-    k_lams = np.arange(0, 56, 4)
+    res = [12000]
+    k_lams = np.arange(0, 52, 4)
     main()
     
