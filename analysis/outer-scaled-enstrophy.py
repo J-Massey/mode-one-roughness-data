@@ -52,7 +52,7 @@ def scale_enstrophy(raw_enstrophy: float, k_la: float, d: str) -> float:
 
 def plot_enstrophy_3d(ax: Axes) -> None:
     ax.set_xlabel(r"$\zeta$")
-    ax.set_ylabel(r"$E$")
+    ax.set_ylabel(r"$E_r$")
     ax.set_xlim(1, 2)
     ax.set_ylim(0.05, 0.6)
 
@@ -70,6 +70,12 @@ def enst_plot_helper(ax: Axes, re_idx: int) -> None:
     zet = interp1d(lam, zeta)(1 / k_lams)
     # Get the enstrophy for the given roughness wavelength
     enstrophy = get_enstrophy(k_lams, res[re_idx])
+    if res[re_idx]==12000:
+        id = 0
+    elif res[re_idx]==24000:
+        id = 2
+    elif res[re_idx]==6000:
+        id = 1
 
     # Plot the enstrophy as a function of zeta
     ax.plot(
@@ -77,7 +83,7 @@ def enst_plot_helper(ax: Axes, re_idx: int) -> None:
         enstrophy,
         markerfacecolor="None",
         marker=markers[re_idx],
-        color=sns.color_palette("colorblind")[re_idx],
+        color=sns.color_palette("colorblind")[id],
         ls="-",
     )
 
@@ -110,7 +116,7 @@ def enst_plot_helper_2d(ax: Axes, re_idx: int) -> None:
 
 
 def plot_enstrophy_diff(ax):
-    ax.set_xlabel(r"$\lambda/\delta$")
+    ax.set_xlabel(r"$\lambda/2\delta_s$")
     ax.set_ylabel(r"$\Delta E/E_{s}$")
 
     # ax.set_xlim(0, 5)
@@ -118,13 +124,18 @@ def plot_enstrophy_diff(ax):
 
     for idx, re in enumerate(res):
         enst_diff = (get_enstrophy(k_lams, re) - get_enstrophy(k_lams, re, "-2d"))/get_enstrophy(k_lams, re, "-2d")
-
+        if re==12000:
+            id = 0
+        elif re==24000:
+            id = 2
+        elif re==6000:
+            id = 1
         ax.scatter(
-            1 / (k_lams+0.5) / 0.06,  # 0.06 is 2*delta
+            1 / (k_lams) / (bl[idx]*2),  # 0.06 is 2*delta
             enst_diff,
             facecolor="None",
             marker=markers[idx],
-            color=sns.color_palette("colorblind")[idx],
+            color=sns.color_palette("colorblind")[id],
         )
 
 def re_legend():
@@ -143,8 +154,8 @@ def re_legend():
             [0],
             ls="-",
             label=r"$Re=12,000$",
-            c=sns.color_palette('colorblind')[1],
-            marker="P",
+            c=sns.color_palette('colorblind')[0],
+            marker="d",
             markerfacecolor="none",
         ),
         Line2D(
@@ -152,7 +163,7 @@ def re_legend():
             [0],
             ls="-",
             label=r"$Re=6,000$",
-            c=sns.color_palette('colorblind')[0],
+            c=sns.color_palette('colorblind')[1],
             marker="^",
             markerfacecolor="none",
         ),
@@ -228,8 +239,8 @@ def plot_wrapper():
     plot_enstrophy_diff(axd['lower'])  # type: ignore
 
     legend1 = axd['lower'].legend(handles=re_legend(), loc=4) # type: ignore
-    legend2 = axd['lower'].legend(handles=smooth_rough_legend(), loc=1) # type: ignore
-    axd['lower'].add_artist(legend1) # type: ignore
+    legend2 = axd['upper right'].legend(handles=smooth_rough_legend(), loc=2) # type: ignore
+    # axd['lower'].add_artist(legend1) # type: ignore
 
     plt.savefig(
         f"{os.getcwd()}/figures/figure8.pdf", bbox_inches="tight", dpi=300
@@ -242,8 +253,9 @@ def main():
 
 if __name__ == "__main__":
     cwd = os.getcwd()
-    markers = ['^', 'p', 'o']
+    markers = ['^', 'd', 'o']
     res = [6000, 12000, 24000]
+    bl = [0.045, 0.034, 0.028]
     k_lams = np.arange(0, 52, 4)
     main()
     

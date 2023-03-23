@@ -23,7 +23,7 @@ def get_forces(k_lam: np.ndarray, re: int, f : str = "p", d: str = "x", dim: str
     for idx, k_la in enumerate(k_lam):
         # Read in the force
         t, p = read_forces(
-            f"{Path.cwd().parent}/outer-scaling/{re}/{k_lam[idx]}{dim}/fort.9",
+            f"{Path.cwd()}/outer-scaling/{re}/{k_lam[idx]}{dim}/fort.9",
             interest=f,
             direction=d,
         )
@@ -36,7 +36,7 @@ def get_rms(k_lam: np.ndarray, re: int, f : str = "p", d: str = "x", dim: str = 
     for idx, k_la in enumerate(k_lam):
         # Read in the force
         t, p = read_forces(
-            f"{Path.cwd().parent}/outer-scaling/{re}/{k_lam[idx]}{dim}/fort.9",
+            f"{Path.cwd()}/outer-scaling/{re}/{k_lam[idx]}{dim}/fort.9",
             interest=f,
             direction=d,
         )
@@ -57,7 +57,6 @@ def plot_thrust(ax: Axes) -> None:
 def thrust_plt_helper(ax: Axes, re_idx: int) -> None:
     # Load the values of zeta (the wave speed) and
     # lambda (the roughness wavelength) from the data file
-    zeta, lam = np.load(f"{cwd}/zeta_lambda.npy", allow_pickle=True)
 
     # Use a linear interpolation to find the value of zeta for the given
     # roughness wavelength
@@ -101,8 +100,6 @@ def plot_thrust_rms(ax: Axes) -> None:
 
 def rms_thrust_plt_helper(ax: Axes, re_idx: int) -> None:
 
-    zeta, lam = np.load(f"{cwd}/zeta_lambda.npy", allow_pickle=True)
-
     zet = interp1d(lam, zeta)(1 / k_lams)
     force = get_rms(k_lams, res[re_idx])
 
@@ -139,8 +136,6 @@ def plot_lift_rms(ax: Axes) -> None:
 
 
 def rms_lift_plt_helper(ax: Axes, re_idx: int) -> None:
-
-    zeta, lam = np.load(f"{cwd}/zeta_lambda.npy", allow_pickle=True)
 
     zet = interp1d(lam, zeta)(1 / k_lams)
     force = get_rms(k_lams, res[re_idx], d="y")
@@ -180,14 +175,13 @@ def plot_power(ax: Axes) -> None:
 def power_plt_helper(ax: Axes, re_idx: int) -> None:
     # Load the values of zeta (the wave speed) and
     # lambda (the roughness wavelength) from the data file
-    zeta, lam = np.load(f"{cwd}/zeta_lambda.npy", allow_pickle=True)
 
     # Use a linear interpolation to find the value of zeta for the given
     # roughness wavelength
     zet = interp1d(lam, zeta)(1 / k_lams)
     # Get the force for the given roughness wavelength
     force = get_forces(k_lams, res[re_idx], f="cp", d="")
-    # [print(f"${f:.4f}$") for f in force]
+    [print(f"${f:.3f}$") for f in force]
 
     # Plot the force as a function of zeta
     ax.plot(
@@ -199,7 +193,7 @@ def power_plt_helper(ax: Axes, re_idx: int) -> None:
         ls="-",
     )
     force = get_forces(k_lams, res[re_idx], f="cp", d="", dim="-2d")
-    [print(f"${f:.2f}$") for f in zet]
+    [print(f"${f:.3f}$") for f in force]
 
     # Plot the force as a function of zeta
     ax.plot(
@@ -283,7 +277,7 @@ def get_thrust_avg(lam, re, d=""):
     thrust = np.empty(len(lam))
     for idx in range(len(lam)):
         t, p = read_forces(
-            f"{Path.cwd().parent}/outer-scaling/{re}/{lam[idx]}{d}/fort.9",
+            f"{Path.cwd()}/outer-scaling/{re}/{lam[idx]}{d}/fort.9",
             interest="P",
             direction="x",
         )
@@ -318,7 +312,7 @@ def plot_wrapper():
     # axd['lower'].add_artist(legend1) # type: ignore
 
     plt.savefig(
-        f"{os.getcwd()}/figures/figure7.pdf", bbox_inches="tight", dpi=300
+        f"{os.getcwd()}/analysis/figures/figure7.pdf", bbox_inches="tight", dpi=300
     )
 
 
@@ -328,9 +322,10 @@ def main():
 
 if __name__ == "__main__":
     cwd = os.getcwd()
+    zeta, lam = np.load(f"{Path.cwd()}/analysis/zeta_lambda.npy", allow_pickle=True)
     markers = ['^', 'p', 'o']
     res = [6000, 12000, 24000]
     res = [12000]
-    k_lams = np.arange(0, 52, 4)
+    k_lams = np.arange(0, 56, 4)
     main()
     
