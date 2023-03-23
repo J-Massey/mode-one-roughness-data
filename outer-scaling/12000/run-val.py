@@ -9,10 +9,10 @@ import numpy as np
 
 
 def run_val(zeta, k_lam):
+    new_f90_2d(zeta, 1/k_lam)
+    run(256, f'{cwd}/{k_lam}-2d')
     new_f90_res(zeta, 1/k_lam)
     run(256, f'{cwd}/{k_lam}')
-    # new_f90_2d(zeta, 1/k_lam)
-    # run(256, f'{cwd}/{k_lam}-2d')
 
 if __name__ == "__main__":
     cwd = Path.cwd()

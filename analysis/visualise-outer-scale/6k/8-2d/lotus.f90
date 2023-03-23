@@ -17,11 +17,11 @@ program swimming_plate
   !
   ! -- Hyperparameters
     real, parameter    :: thicc=0.03*c
-    real, parameter    :: A = 0.1*c, St_d = 0.3, k_x=0.0, k_z=0.125, h_roughness=0.0
+    real, parameter    :: A = 0.1*c, St_d = 0.3, k_x=0.0, k_z=8.0, h_roughness=0.0
     real, parameter    :: a_coeff = 0.28, &
                           b_coeff = 0.13, &
                           c_coeff = 0.05, &
-                          k_coeff = 0.900629294373188, &
+                          k_coeff = 0.879084763735102, &
                           f = St_d/(2.*A)
   !
   ! -- Dimensions
