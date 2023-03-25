@@ -24,26 +24,24 @@ def plot_domain_test():
     [ax.set_xlim(0, 1) for ax in axes]
 
 
-    domain_set(axes[0], 6000, sns.color_palette('colorblind')[0])
-    domain_set(axes[1], 12000, sns.color_palette('colorblind')[1])
+    domain_set(axes[0], 6000, sns.color_palette('colorblind')[1])
+    domain_set(axes[1], 12000, sns.color_palette('colorblind')[0])
     domain_set(axes[2], 24000, sns.color_palette('colorblind')[2])
 
-    legend_elements1 = [
-        Line2D([0], [0], ls="-", label=r"$Re=5,000$", c=sns.color_palette('colorblind')[0]),
-        Line2D([0], [0], ls="-", label=r"$Re=12,000$", c=sns.color_palette('colorblind')[1]),
-        Line2D([0], [0], ls="-", label=r"$Re=24,000$", c=sns.color_palette('colorblind')[2]),
-    ]
     legend_elements2 = [
         Line2D([0], [0], ls="-", label="Domain 1", c="k"),
         Line2D([0], [0], ls=":", label="Domain 2", c="k"),
     ]
 
-    legend1 = axes[0].legend(handles=legend_elements1, loc=2)
-    legend2 = axes[0].legend(handles=legend_elements2, loc=4)
+    legend1 = axes[0].legend(handles=[Line2D([0], [0], ls="-", label=r"$Re=6,000$", c=sns.color_palette('colorblind')[1])], loc=2)
+    legend2 = axes[1].legend(handles=[Line2D([0], [0], ls="-", label=r"$Re=12,000$", c=sns.color_palette('colorblind')[0])], loc=2)
+    legend3 = axes[2].legend(handles=[Line2D([0], [0], ls="-", label=r"$Re=24,000$", c=sns.color_palette('colorblind')[2])], loc=2)
+    legend4 = axes[0].legend(handles=legend_elements2, loc=4)
     axes[0].add_artist(legend1)
-    axes[0].add_artist(legend2)
+    # axes[1].add_artist(legend2)
+    # axes[2].add_artist(legend3)
 
-    plt.savefig(f"{Path.cwd()}/figures/figure11.pdf", bbox_inches="tight", dpi=200)
+    plt.savefig(f"{Path.cwd()}/analysis/figures/figure12.pdf", bbox_inches="tight", dpi=200)
 
 
 def domain_set(ax, re, color):
@@ -78,7 +76,7 @@ def interp_cycle(
     direction="x",
 ):
     t, ux, *_ = read_forces(
-        f"{Path.cwd().parent}/domain-test/{crit_str}/1024/fort.9",
+        f"{Path.cwd()}/domain-test/{crit_str}/1024/fort.9",
         interest=interest,
         direction=direction,
     )

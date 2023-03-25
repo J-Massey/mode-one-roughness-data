@@ -116,7 +116,7 @@ def enst_plot_helper_2d(ax: Axes, re_idx: int) -> None:
 
 
 def plot_enstrophy_diff(ax):
-    ax.set_xlabel(r"$\lambda/2\delta_s$")
+    ax.set_xlabel(r"$\lambda/2\overline{\delta_s}(Re)$")
     ax.set_ylabel(r"$\Delta E/E_{s}$")
 
     # ax.set_xlim(0, 5)
@@ -238,12 +238,12 @@ def plot_wrapper():
     plot_enstrophy_2d(axd['upper right']) # type: ignore
     plot_enstrophy_diff(axd['lower'])  # type: ignore
 
-    legend1 = axd['lower'].legend(handles=re_legend(), loc=4) # type: ignore
+    legend1 = axd['lower'].legend(handles=re_legend(), loc=2) # type: ignore
     legend2 = axd['upper right'].legend(handles=smooth_rough_legend(), loc=2) # type: ignore
     # axd['lower'].add_artist(legend1) # type: ignore
 
     plt.savefig(
-        f"{os.getcwd()}/figures/figure8.pdf", bbox_inches="tight", dpi=300
+        f"{os.getcwd()}/figures/figure9.pdf", bbox_inches="tight", dpi=300
     )
 
 

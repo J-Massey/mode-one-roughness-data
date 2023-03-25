@@ -31,18 +31,18 @@ def plot_phase_av_ct_ts():
 
     plot_legends(ax)
 
-    plt.savefig(f"{Path.cwd()}/figures/figure12.pdf", bbox_inches="tight", dpi=200)
+    plt.savefig(f"{Path.cwd()}/analysis/figures/figure13.pdf", bbox_inches="tight", dpi=200)
 
 
 def plot_legends(ax):
     legend_elements1 = [
         Line2D(
-            [0], [0], ls="-", label=r"$Re=6,000$", c=sns.color_palette('colorblind')[0]
+            [0], [0], ls="-", label=r"$Re=6,000$", c=sns.color_palette('colorblind')[1]
         ),
     ]
     legend_elements2 = [
         Line2D(
-            [0], [0], ls="-", label="$Re=12,000$", c=sns.color_palette('colorblind')[1]
+            [0], [0], ls="-", label="$Re=12,000$", c=sns.color_palette('colorblind')[0]
         ),
     ]
     legend_elements3 = [
@@ -115,7 +115,7 @@ def interp_cycle(
         Interpolated function.
     """
     t, ux, *_ = read_forces(
-        f"{Path.cwd().parent}/res-study/{re}/{L}/fort.9",
+        f"{Path.cwd()}/res-study/{re}/{L}/fort.9",
         interest=interest,
         direction=direction,
     )

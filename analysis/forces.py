@@ -82,7 +82,7 @@ def thrust_plt_helper(ax: Axes, re_idx: int) -> None:
         zet,
         force,
         markerfacecolor="None",
-        marker='s',
+        marker='d',
         color='grey',
         ls="-.",
     )
@@ -119,7 +119,7 @@ def rms_thrust_plt_helper(ax: Axes, re_idx: int) -> None:
         zet,
         force,
         markerfacecolor="None",
-        marker='s',
+        marker='d',
         color='grey',
         ls="-.",
     )
@@ -156,7 +156,7 @@ def rms_lift_plt_helper(ax: Axes, re_idx: int) -> None:
         zet,
         force,
         markerfacecolor="None",
-        marker='s',
+        marker='d',
         color='grey',
         ls="-.",
     )
@@ -181,7 +181,7 @@ def power_plt_helper(ax: Axes, re_idx: int) -> None:
     zet = interp1d(lam, zeta)(1 / k_lams)
     # Get the force for the given roughness wavelength
     force = get_forces(k_lams, res[re_idx], f="cp", d="")
-    [print(f"${f:.3f}$") for f in force]
+    # [print(f"${f:.3f}$") for f in force]
 
     # Plot the force as a function of zeta
     ax.plot(
@@ -193,14 +193,14 @@ def power_plt_helper(ax: Axes, re_idx: int) -> None:
         ls="-",
     )
     force = get_forces(k_lams, res[re_idx], f="cp", d="", dim="-2d")
-    [print(f"${f:.3f}$") for f in force]
+    # [print(f"${f:.3f}$") for f in force]
 
     # Plot the force as a function of zeta
     ax.plot(
         zet,
         force,
         markerfacecolor="None",
-        marker='s',
+        marker='d',
         color='grey',
         ls="-.",
     )
