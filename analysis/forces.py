@@ -312,7 +312,7 @@ def plot_wrapper():
     # axd['lower'].add_artist(legend1) # type: ignore
 
     plt.savefig(
-        f"{os.getcwd()}/analysis/figures/figure7.pdf", bbox_inches="tight", dpi=300
+        f"{os.getcwd()}/analysis/figures/figure8.pdf", bbox_inches="tight", dpi=300
     )
 
 
