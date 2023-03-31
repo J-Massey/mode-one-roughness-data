@@ -25,9 +25,10 @@ def extract_delta(re):
     # Extract the delta profiles for a given Reynolds number
     sim_dir = f"{Path.cwd()}/analysis/visualise-outer-scale/{re}k/0-2d"
     vel = ReadIn(sim_dir, 'fluid', 1024, ext='vti')
-    profiles = np.zeros((np.shape(vel.snaps)[0], np.shape(vel.snaps)[2]))
-    ys = np.zeros((np.shape(vel.snaps)[0], np.shape(vel.snaps)[2])) 
-    for idx, s in enumerate(vel.snaps):
+    snaps = vel.snaps
+    profiles = np.zeros((np.shape(snaps)[0], np.shape(snaps)[2]))
+    ys = np.zeros((np.shape(snaps)[0], np.shape(snaps)[2])) 
+    for idx, s in enumerate(snaps):
         snap = AssignProps(s)
         index = np.argmin(abs(np.mean(snap.X, axis=2)-1))
         profiles[idx] = np.ravel(np.mean(snap.U, axis=2)[:, index])
@@ -55,21 +56,28 @@ def delta(profs):
         pos = np.where(u>0.)[0]
 
         # Split the profiles at the indices where the difference between indices is not equal to 1
+        # This identifies the body and splits either side
         yout = np.split(y[pos],np.where(np.diff(pos)!=1)[0]+1)
         uout = np.split(u[pos],np.where(np.diff(pos)!=1)[0]+1)
 
         bl = []
         for jdx in range(2):
+            # Get the maximum and minimum values from each top and bottom half 
             maxi, mini = np.max(uout[jdx]), np.min(uout[jdx])
+            # Find the indices where the maximum and minimum values are
             pos_max, pos_min = np.where(uout[jdx]==maxi)[0], np.where(uout[jdx]==mini)[0]
-            bls = abs(yout[jdx][pos_max]-yout[jdx][pos_min])
+            if pos_max.size > 1 or pos_min.size > 1:
+                bls = abs(yout[jdx][pos_max]-yout[jdx][pos_min]).mean()
+            else:
+                bls = abs(yout[jdx][pos_max]-yout[jdx][pos_min])
             bl.append(bls)
+        # print(bl, np.shape(bl))
 
         # Distinguish between pos and neg pressure gradients
         positive[idx] = min(bl)
         negative[idx] = max(bl)
 
-    return np.mean(positive), np.mean(negative)
+    return positive, negative
 
 
 def get_bl(profs):
@@ -162,9 +170,38 @@ def plot_bl_seperated():
     
     plt.savefig(f"{Path.cwd()}/analysis/figures/bl.pdf", dpi=200, transparent=True)
 
+def plot_bl_time():
+    fig, ax = plt.subplots(2, figsize=(4,4))
+    ax[1].set_xlabel(r"$t$")
+    ax[0].set_ylabel(r"$\delta_{pos}$")
+    ax[1].set_ylabel(r"$\delta_{neg}$")
+    [ax.set_xticks([]) for ax in ax[:-1]]
+
+    res = [12, 6, 24]
+    for idx, re in enumerate(res):
+        pos = np.load(f"{Path.cwd()}/analysis/visualise-outer-scale/pos_{re}.npy")
+        neg = np.load(f"{Path.cwd()}/analysis/visualise-outer-scale/neg_{re}.npy")
+        t = np.linspace(0, 3, len(pos))
+        ax[0].plot(t, pos, color=sns.color_palette('colorblind')[idx])
+        print(np.std(pos))
+        ax[1].plot(t, neg, color=sns.color_palette('colorblind')[idx])
+
+    # for idx, ax in enumerate(ax):
+    #     l2 = ax.legend(labels=[f"$\delta={delta(extract_delta(res[idx]))[0]:.3f}$"], loc=4)
+    #     l1 = ax.legend(handles=[re_legend()[idx]], loc=2)
+    #     ax.add_artist(l2)
+
+    
+    plt.savefig(f"{Path.cwd()}/analysis/figures/bl_t.pdf", dpi=200, transparent=True)
+
 
 if __name__ == "__main__":
     res = [6, 12, 24]
-    plot_bl_seperated()
-    plot_bl_ontop()
-    print(delta(extract_delta(12)))
+    # plot_bl_seperated()
+    # plot_bl_ontop()
+    # for re in res:
+    #     pos, neg = delta(extract_delta(re))
+    #     np.save(f"{Path.cwd()}/analysis/visualise-outer-scale/pos_{re}.npy", pos, allow_pickle=True)
+    #     np.save(f"{Path.cwd()}/analysis/visualise-outer-scale/neg_{re}.npy", neg, allow_pickle=True)
+    plot_bl_time()
+    # print(np.linspace(0,1, len(pos)), pos)

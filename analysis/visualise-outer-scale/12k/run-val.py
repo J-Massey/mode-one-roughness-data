@@ -18,7 +18,7 @@ if __name__ == "__main__":
     cwd = Path.cwd()
     k_lams=[12]
     zeta, lam = np.load(f'{cwd}/zeta_lambda.npy', allow_pickle=True)
-    [run_val(interp1d(lam, zeta)(1/k_lam), k_lam) for k_lam in k_lams]
+    # [run_val(interp1d(lam, zeta)(1/k_lam), k_lam) for k_lam in k_lams]
     new_f90_2d(interp1d(lam, zeta)(1000000), 12)
     run(256, f'{cwd}/0-2d')
     

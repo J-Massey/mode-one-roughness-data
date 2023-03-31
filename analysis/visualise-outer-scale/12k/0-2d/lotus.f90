@@ -96,7 +96,7 @@ program swimming_plate
       inquire(file='../.kill', exist=there)
       if (there) exit time_loop
 
-      if((t>(finish-1)/f).and.(mod(t,0.1/f)<dt)) call flow%write(geom, write_vtr=.false.)
+      if((t>(finish-3)/f).and.(mod(t,0.02/f)<dt)) call flow%write(geom, write_vtr=.false.)
 
     end do time_loop
 

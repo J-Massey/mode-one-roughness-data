@@ -30,7 +30,7 @@ def get_enstrophy(k_lam: np.ndarray, re: int, d: str = "") -> np.ndarray:
     for idx, k_la in enumerate(k_lam):
         # Read in the enstrophy
         t, p = read_forces(
-            f"{Path.cwd().parent}/outer-scaling/{re}/{k_lam[idx]}{d}/fort.9",
+            f"{Path.cwd()}/outer-scaling/{re}/{k_lam[idx]}{d}/fort.9",
             interest="E",
             direction="w",
         )
@@ -63,7 +63,7 @@ def plot_enstrophy_3d(ax: Axes) -> None:
 def enst_plot_helper(ax: Axes, re_idx: int) -> None:
     # Load the values of zeta (the wave speed) and
     # lambda (the roughness wavelength) from the data file
-    zeta, lam = np.load(f"{cwd}/zeta_lambda.npy", allow_pickle=True)
+    zeta, lam = np.load(f"{cwd}/analysis/zeta_lambda.npy", allow_pickle=True)
 
     # Use a linear interpolation to find the value of zeta for the given
     # roughness wavelength
@@ -99,7 +99,6 @@ def plot_enstrophy_2d(ax: Axes) -> None:
 
 
 def enst_plot_helper_2d(ax: Axes, re_idx: int) -> None:
-    zeta, lam = np.load(f"{cwd}/zeta_lambda.npy", allow_pickle=True)
     zet = interp1d(lam, zeta)(1 / k_lams)
 
     enstrophy_2d = get_enstrophy(k_lams, res[re_idx], d='-2d')
@@ -124,6 +123,7 @@ def plot_enstrophy_diff(ax):
 
     for idx, re in enumerate(res):
         enst_diff = (get_enstrophy(k_lams, re) - get_enstrophy(k_lams, re, "-2d"))/get_enstrophy(k_lams, re, "-2d")
+        print(enst_diff, 1 / (k_lams) / (bl[idx]*2))
         if re==12000:
             id = 0
         elif re==24000:
@@ -243,7 +243,7 @@ def plot_wrapper():
     # axd['lower'].add_artist(legend1) # type: ignore
 
     plt.savefig(
-        f"{os.getcwd()}/figures/figure9.pdf", bbox_inches="tight", dpi=300
+        f"{os.getcwd()}/analysis/figures/figure9.pdf", bbox_inches="tight", dpi=300
     )
 
 
@@ -253,9 +253,11 @@ def main():
 
 if __name__ == "__main__":
     cwd = os.getcwd()
+
+    zeta, lam = np.load(f"{cwd}/analysis/zeta_lambda.npy", allow_pickle=True)
     markers = ['^', 'd', 'o']
     res = [6000, 12000, 24000]
-    bl = [0.045, 0.034, 0.028]
+    bl = [0.063, 0.045, 0.032]
     k_lams = np.arange(0, 52, 4)
     main()
     
