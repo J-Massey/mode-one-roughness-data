@@ -1,0 +1,1303 @@
+Running SLURM prolog script on ruby002.cluster.local
+===============================================================================
+Job started on Wed Aug  3 01:26:30 BST 2022
+Job ID          : 1639502
+Job name        : dns24x24
+WorkDir         : /ssdfs/users/jmom1n15/tidy_res_test/52x52
+Command         : /ssdfs/users/jmom1n15/tidy_res_test/52x52/jobby
+Partition       : amd
+Num hosts       : 4
+Num cores       : 256
+Num of tasks    : 256
+Hosts allocated : ruby[002-004,045]
+Job Output Follows ...
+===============================================================================
+Starting calculation at Wed Aug  3 01:26:30 BST 2022
+---------------------------------------------------------------
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: `libgeom.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+make: `libfluid.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -I/home/jmom1n15/Lotus/solver/src/oop -I/home/jmom1n15/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/jmom1n15/Lotus/solver/src/oop/. -L/home/jmom1n15/Lotus/solver/src/geom/. -lfluid -lgeom
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+ Setting up the grid, body and fluid
+ -----------------------------------
+composite(195.0)=192
+  products :3*2**6
+composite(195.0)=192
+  products :3*2**6
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+--------------------------------------------------------------------------
+mpirun has exited due to process rank 145 with PID 42202 on
+node ruby004 exiting improperly. There are three reasons this could occur:
+
+1. this process did not call "init" before exiting, but others in
+the job did. This can cause a job to hang indefinitely while it waits
+for all processes to call "init". By rule, if one process calls "init",
+then ALL processes must call "init" prior to termination.
+
+2. this process called "init", but exited without calling "finalize".
+By rule, all processes that call "init" MUST call "finalize" prior to
+exiting or it will be considered an "abnormal termination"
+
+3. this process called "MPI_Abort" or "orte_abort" and the mca parameter
+orte_create_session_dirs is set to false. In this case, the run-time cannot
+detect that the abort call was an abnormal termination. Hence, the only
+error message you will receive is this one.
+
+This may have caused other processes in the application to be
+terminated by signals sent by mpirun (as reported here).
+
+You can avoid this message by specifying -quiet on the mpirun command line.
+--------------------------------------------------------------------------
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: `libgeom.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+make: `libfluid.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -I/home/jmom1n15/Lotus/solver/src/oop -I/home/jmom1n15/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/jmom1n15/Lotus/solver/src/oop/. -L/home/jmom1n15/Lotus/solver/src/geom/. -lfluid -lgeom
+ Setting up the grid, body and fluid
+ -----------------------------------
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+composite(390.0)=384
+  products :3*2**7
+composite(390.0)=384
+  products :3*2**7
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG
+STOP composite found p<3. Execution stopped.
+--------------------------------------------------------------------------
+mpirun has exited due to process rank 74 with PID 413 on
+node ruby003 exiting improperly. There are three reasons this could occur:
+
+1. this process did not call "init" before exiting, but others in
+the job did. This can cause a job to hang indefinitely while it waits
+for all processes to call "init". By rule, if one process calls "init",
+then ALL processes must call "init" prior to termination.
+
+2. this process called "init", but exited without calling "finalize".
+By rule, all processes that call "init" MUST call "finalize" prior to
+exiting or it will be considered an "abnormal termination"
+
+3. this process called "MPI_Abort" or "orte_abort" and the mca parameter
+orte_create_session_dirs is set to false. In this case, the run-time cannot
+detect that the abort call was an abnormal termination. Hence, the only
+error message you will receive is this one.
+
+This may have caused other processes in the application to be
+terminated by signals sent by mpirun (as reported here).
+
+You can avoid this message by specifying -quiet on the mpirun command line.
+--------------------------------------------------------------------------
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: `libgeom.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+make: `libfluid.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -I/home/jmom1n15/Lotus/solver/src/oop -I/home/jmom1n15/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/jmom1n15/Lotus/solver/src/oop/. -L/home/jmom1n15/Lotus/solver/src/geom/. -lfluid -lgeom
+ Setting up the grid, body and fluid
+ -----------------------------------
+composite(780.0)=768
+  products :3*2**8
+composite(780.0)=768
+  products :3*2**8
+composite(40.0)=40
+  products :5*2**3
+ Stretched grid sections:
+  negative: r= 1.4%, h_max=14.6
+  positive: r= 1.3%, h_max=9.9
+ grid symmetry:  F
+ Stretched grid sections:
+  negative: r= 0.8%, h_max=6.5
+  positive: r= 0.8%, h_max=6.5
+ grid symmetry:  T
+ Starting time update loop
+ -----------------------------------
+Time:          0.000. Thrust:         15.137
+Time:          1.002. Thrust:         -0.171
+Time:          2.000. Thrust:         -0.161
+Time:          3.001. Thrust:         -0.152
+Time:          4.002. Thrust:         -0.161
+Time:          5.000. Thrust:         -0.163
+Time:          6.002. Thrust:         -0.180
+Time:          7.001. Thrust:         -0.182
+ Loop complete: writing restart files and exiting
+ -----------------------------------
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: `libgeom.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+make: `libfluid.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -I/home/jmom1n15/Lotus/solver/src/oop -I/home/jmom1n15/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/jmom1n15/Lotus/solver/src/oop/. -L/home/jmom1n15/Lotus/solver/src/geom/. -lfluid -lgeom
+ Setting up the grid, body and fluid
+ -----------------------------------
+composite(1560.0)=1536
+  products :3*2**9
+composite(1560.0)=1536
+  products :3*2**9
+composite(80.0)=80
+  products :5*2**4
+ Stretched grid sections:
+  negative: r= 0.7%, h_max=14.6
+  positive: r= 0.6%, h_max=9.9
+ grid symmetry:  F
+ Stretched grid sections:
+  negative: r= 0.4%, h_max=6.5
+  positive: r= 0.4%, h_max=6.5
+ grid symmetry:  T
+ Starting time update loop
+ -----------------------------------
+Time:          0.000. Thrust:         40.116
+Time:          1.001. Thrust:         -0.157
+Time:          2.001. Thrust:         -0.143
+Time:          3.001. Thrust:         -0.124
+Time:          4.000. Thrust:         -0.128
+Time:          5.000. Thrust:         -0.128
+Time:          6.001. Thrust:         -0.141
+Time:          7.000. Thrust:         -0.137
+ Loop complete: writing restart files and exiting
+ -----------------------------------
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: `libgeom.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+make: `libfluid.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -I/home/jmom1n15/Lotus/solver/src/oop -I/home/jmom1n15/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/jmom1n15/Lotus/solver/src/oop/. -L/home/jmom1n15/Lotus/solver/src/geom/. -lfluid -lgeom
+ Setting up the grid, body and fluid
+ -----------------------------------
+composite(3120.0)=3072
+  products :3*2**10
+composite(3120.0)=3072
+  products :3*2**10
+composite(160.0)=160
+  products :5*2**5
+ Stretched grid sections:
+  negative: r= 0.3%, h_max=14.6
+  positive: r= 0.3%, h_max=9.9
+ grid symmetry:  F
+ Stretched grid sections:
+  negative: r= 0.2%, h_max=6.5
+  positive: r= 0.2%, h_max=6.5
+ grid symmetry:  T
+ Starting time update loop
+ -----------------------------------
+Time:          0.000. Thrust:         98.209
+Time:          1.000. Thrust:         -0.159
+Time:          2.000. Thrust:         -0.150
+Time:          3.001. Thrust:         -0.143
+Time:          4.000. Thrust:         -0.149
+Time:          5.000. Thrust:         -0.154
+Time:          6.000. Thrust:         -0.149
+Time:          7.000. Thrust:         -0.149
+ Loop complete: writing restart files and exiting
+ -----------------------------------
+Number of proccessors :256
+Run folder            :/ssdfs/users/jmom1n15/tidy_res_test/52x52/130
+No read folder
+Creating /ssdfs/users/jmom1n15/tidy_res_test/52x52/130
+Setting up in /ssdfs/users/jmom1n15/tidy_res_test/52x52/130
+No postprocessing set up
+No stopping criteria, the simulation will run its course
+Making executable 
+Finished executable 
+Running executable 
+Run all python files for postprocessing
+Popping back up
+Number of proccessors :256
+Run folder            :/ssdfs/users/jmom1n15/tidy_res_test/52x52/260
+No read folder
+Creating /ssdfs/users/jmom1n15/tidy_res_test/52x52/260
+Setting up in /ssdfs/users/jmom1n15/tidy_res_test/52x52/260
+No postprocessing set up
+No stopping criteria, the simulation will run its course
+Making executable 
+Finished executable 
+Running executable 
+Run all python files for postprocessing
+Popping back up
+Number of proccessors :256
+Run folder            :/ssdfs/users/jmom1n15/tidy_res_test/52x52/520
+No read folder
+Creating /ssdfs/users/jmom1n15/tidy_res_test/52x52/520
+Setting up in /ssdfs/users/jmom1n15/tidy_res_test/52x52/520
+No postprocessing set up
+No stopping criteria, the simulation will run its course
+Making executable 
+Finished executable 
+Running executable 
+Run all python files for postprocessing
+Popping back up
+Number of proccessors :256
+Run folder            :/ssdfs/users/jmom1n15/tidy_res_test/52x52/1040
+No read folder
+Folder /ssdfs/users/jmom1n15/tidy_res_test/52x52/1040 exists!
+Moving contents to trash
+Setting up in /ssdfs/users/jmom1n15/tidy_res_test/52x52/1040
+No postprocessing set up
+No stopping criteria, the simulation will run its course
+Making executable 
+Finished executable 
+Running executable 
+Run all python files for postprocessing
+Popping back up
+Number of proccessors :256
+Run folder            :/ssdfs/users/jmom1n15/tidy_res_test/52x52/2080
+No read folder
+Creating /ssdfs/users/jmom1n15/tidy_res_test/52x52/2080
+Setting up in /ssdfs/users/jmom1n15/tidy_res_test/52x52/2080
+No postprocessing set up
+No stopping criteria, the simulation will run its course
+Making executable 
+Finished executable 
+Running executable 
+Run all python files for postprocessing
+Popping back up
+==============================================================================
+Running epilogue script on ruby002.
+
+Submit time  : 2022-08-02T18:07:10
+Start time   : 2022-08-03T01:26:27
+End time     : 2022-08-05T02:13:59
+Elapsed time : 2-00:47:30 (Timelimit=2-12:00:00)
+
+Job ID: 1639502
+Cluster: i5
+User/Group: jmom1n15/mm
+State: COMPLETED (exit code 0)
+Nodes: 4
+Cores per node: 64
+CPU Utilized: 519-19:42:24
+CPU Efficiency: 99.88% of 520-10:40:00 core-walltime
+Job Wall-clock time: 2-00:47:30
+Memory Utilized: 117.62 GB
+Memory Efficiency: 13.07% of 900.00 GB
+

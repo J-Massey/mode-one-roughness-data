@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#SBATCH --ntasks=1
+#SBATCH --mem=800000
+#SBATCH --nodes=1
+#SBATCH --partition=highmem
+#SBATCH --job-name=analysis
+#SBATCH --time=10:10:00
+#SBATCH --output=save.out
+# SBATCH --dependency=afterok:1597923
+
+module purge
+module load python/3.7.3 texlive
+
+python3 vort_x.py

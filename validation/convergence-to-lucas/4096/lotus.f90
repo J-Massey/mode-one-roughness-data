@@ -12,8 +12,8 @@ program swimming_plate
   real,parameter     :: Re = 77000
 !
   real,parameter     :: c=4096, nu=c/Re
-  real, parameter    :: finish=6
-  integer            :: b(3) = [16,8,1]
+  real, parameter    :: finish=8
+  integer            :: b(3) = [16,16,1]
 !
 ! -- Hyperparameters
   real, parameter    :: thicc=0.03*c
@@ -84,13 +84,13 @@ program swimming_plate
     inquire(file='../.kill', exist=there)
     if (there) exit time_loop
 
-    ! if((t>(finish-4)/f).and.(mod(t,0.1/f)<dt)) call flow%write(geom, write_vtr=.false.)
+    if((t>(finish-1)/f).and.(mod(t,0.05/f)<dt)) call flow%write(geom, write_vtr=.false.)
 
   end do time_loop
 
   if(root) print *,'Loop complete: writing restart files and exiting'
   if(root) print *,'-----------------------------------'
-!     call flow%write(geom, write_vtr=.false.)
+  call flow%write(geom, write_vtr=.false.)
   call mympi_end
 contains
 !

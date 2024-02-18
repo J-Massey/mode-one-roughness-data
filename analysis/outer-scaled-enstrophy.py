@@ -16,6 +16,8 @@ import scienceplots
 
 plt.style.use(["science"])
 plt.rcParams["font.size"] = "10.5"
+plt.rc('text', usetex=True)
+plt.rc('text.latex', preamble=r'\usepackage{txfonts}')
 
 def SA_enstrophy_scaling(span=0.03125):
     return (
@@ -51,13 +53,14 @@ def scale_enstrophy(raw_enstrophy: float, k_la: float, d: str) -> float:
 
 
 def plot_enstrophy_3d(ax: Axes) -> None:
-    ax.set_xlabel(r"$\zeta$")
-    ax.set_ylabel(r"$E_r$")
+    ax.set_xlabel(r"wavespeed")
+    ax.set_ylabel(r"enstrophy")
     ax.set_xlim(1, 2)
-    ax.set_ylim(0.05, 0.6)
+    # ax.set_ylim(0.05, 0.6)
 
     for idx, _ in enumerate(res):
         enst_plot_helper(ax, idx)
+        enst_plot_helper_2d(ax, idx)
 
 
 def enst_plot_helper(ax: Axes, re_idx: int) -> None:
@@ -118,7 +121,7 @@ def plot_enstrophy_diff(ax):
     ax.set_xlabel(r"$\lambda/2\overline{\delta_s}(Re)$")
     ax.set_ylabel(r"$\Delta E/E_{s}$")
 
-    # ax.set_xlim(0, 5)
+    ax.set_xlim(0.1, 4)
     ax.set_xscale("log")
 
     for idx, re in enumerate(res):
@@ -232,23 +235,42 @@ def read_csv(fn):
 
 def plot_wrapper():
     fig, axd = plt.subplot_mosaic([['upper left', 'upper right'],
-                               ['lower', 'lower']],
-                              figsize=(5., 5.), layout="constrained")
-    plot_enstrophy_3d(axd['upper left']) # type: ignore
-    plot_enstrophy_2d(axd['upper right']) # type: ignore
+                                   ['lower', 'lower']],
+                                  figsize=(5., 5.), layout="constrained")
+
+    plot_enstrophy_3d(axd['upper left'])  # type: ignore
+    plot_enstrophy_2d(axd['upper right'])  # type: ignore
     plot_enstrophy_diff(axd['lower'])  # type: ignore
 
-    legend1 = axd['lower'].legend(handles=re_legend(), loc=2) # type: ignore
-    legend2 = axd['upper right'].legend(handles=smooth_rough_legend(), loc=2) # type: ignore
-    # axd['lower'].add_artist(legend1) # type: ignore
+    fig.text(0.001, 0.975, '(a)')
+    fig.text(0.501, 0.975, '(b)')
+    fig.text(0.001, 0.475, '(c)')
+
+    legend1 = axd['lower'].legend(handles=re_legend(), loc=2)  # type: ignore
+    # legend2 = axd['upper right'].legend(handles=smooth_rough_legend(), loc=2)  # type: ignore
 
     plt.savefig(
         f"{os.getcwd()}/analysis/figures/figure9.pdf", bbox_inches="tight", dpi=300
     )
 
+def plot_discovor():
+    fig, axd = plt.subplots(figsize=(4., 4.))
+    # plot_enstrophy_3d(axd['upper left']) # type: ignore
+    # plot_enstrophy_2d(axd['upper right']) # type: ignore
+    plot_enstrophy_3d(axd)  # type: ignore
+
+    # legend1 = axd['lower'].legend(handles=re_legend(), loc=2) # type: ignore
+    # legend2 = axd['upper right'].legend(handles=smooth_rough_legend(), loc=2) # type: ignore
+    # axd['lower'].add_artist(legend1) # type: ignore
+
+    plt.savefig(
+        f"{os.getcwd()}/analysis/figures/enst-viva.png", bbox_inches="tight", dpi=400
+    )
+
 
 def main():
-    plot_wrapper()
+    # plot_wrapper()
+    plot_discovor()
 
 
 if __name__ == "__main__":
@@ -256,7 +278,7 @@ if __name__ == "__main__":
 
     zeta, lam = np.load(f"{cwd}/analysis/zeta_lambda.npy", allow_pickle=True)
     markers = ['^', 'd', 'o']
-    res = [6000, 12000, 24000]
+    res = [12000]
     bl = [0.063, 0.045, 0.032]
     k_lams = np.arange(0, 52, 4)
     main()

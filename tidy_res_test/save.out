@@ -1,0 +1,36 @@
+Running SLURM prolog script on gold58.cluster.local
+===============================================================================
+Job started on Thu Sep  1 11:16:32 BST 2022
+Job ID          : 1702240
+Job name        : analysis
+WorkDir         : /ssdfs/users/jmom1n15/tidy_res_test
+Command         : /ssdfs/users/jmom1n15/tidy_res_test/analysisSub
+Partition       : highmem
+Num hosts       : 1
+Num cores       : 1
+Num of tasks    : 1
+Hosts allocated : gold58
+Job Output Follows ...
+===============================================================================
+Saved for 520
+Saved for 1040
+Saved for 2080
+==============================================================================
+Running epilogue script on gold58.
+
+Submit time  : 2022-09-01T11:16:31
+Start time   : 2022-09-01T11:16:32
+End time     : 2022-09-01T11:22:39
+Elapsed time : 00:06:07 (Timelimit=10:10:00)
+
+Job ID: 1702240
+Cluster: i5
+User/Group: jmom1n15/mm
+State: COMPLETED (exit code 0)
+Cores: 1
+CPU Utilized: 00:05:54
+CPU Efficiency: 96.46% of 00:06:07 core-walltime
+Job Wall-clock time: 00:06:07
+Memory Utilized: 264.99 GB
+Memory Efficiency: 33.92% of 781.25 GB
+

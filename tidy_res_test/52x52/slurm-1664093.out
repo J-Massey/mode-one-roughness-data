@@ -1,0 +1,749 @@
+Running SLURM prolog script on ruby049.cluster.local
+===============================================================================
+Job started on Tue Aug 16 09:05:59 BST 2022
+Job ID          : 1664093
+Job name        : convergence52x52s
+WorkDir         : /ssdfs/users/jmom1n15/tidy_res_test/52x52
+Command         : /ssdfs/users/jmom1n15/tidy_res_test/52x52/jobby
+Partition       : amd
+Num hosts       : 4
+Num cores       : 256
+Num of tasks    : 256
+Hosts allocated : ruby[049,066,069-070]
+Job Output Follows ...
+===============================================================================
+Starting calculation at Tue Aug 16 09:05:59 BST 2022
+---------------------------------------------------------------
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: `libgeom.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+make: `libfluid.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -I/home/jmom1n15/Lotus/solver/src/oop -I/home/jmom1n15/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/jmom1n15/Lotus/solver/src/oop/. -L/home/jmom1n15/Lotus/solver/src/geom/. -lfluid -lgeom
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+ Setting up the grid, body and fluid
+ -----------------------------------
+composite(195.0)=192
+  products :3*2**6
+composite(195.0)=192
+  products :3*2**6
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: `libgeom.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+make: `libfluid.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -I/home/jmom1n15/Lotus/solver/src/oop -I/home/jmom1n15/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/jmom1n15/Lotus/solver/src/oop/. -L/home/jmom1n15/Lotus/solver/src/geom/. -lfluid -lgeom
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+ Setting up the grid, body and fluid
+ -----------------------------------
+composite(390.0)=384
+  products :3*2**7
+composite(390.0)=384
+  products :3*2**7
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+STOP composite found p<3. Execution stopped.
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: `libgeom.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+make: `libfluid.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -I/home/jmom1n15/Lotus/solver/src/oop -I/home/jmom1n15/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/jmom1n15/Lotus/solver/src/oop/. -L/home/jmom1n15/Lotus/solver/src/geom/. -lfluid -lgeom
+ Setting up the grid, body and fluid
+ -----------------------------------
+composite(780.0)=768
+  products :3*2**8
+composite(780.0)=768
+  products :3*2**8
+composite(40.0)=40
+  products :5*2**3
+ Stretched grid sections:
+  negative: r= 1.4%, h_max=14.6
+  positive: r= 1.3%, h_max=9.9
+ grid symmetry:  F
+ Stretched grid sections:
+  negative: r= 0.8%, h_max=6.5
+  positive: r= 0.8%, h_max=6.5
+ grid symmetry:  T
+ Starting time update loop
+ -----------------------------------
+Time:          0.000. Thrust:         15.139
+Time:          1.002. Thrust:         -0.167
+Time:          2.000. Thrust:         -0.152
+Time:          3.001. Thrust:         -0.148
+Time:          4.002. Thrust:         -0.174
+Time:          5.000. Thrust:         -0.198
+Time:          6.002. Thrust:         -0.166
+Time:          7.001. Thrust:         -0.221
+ Loop complete: writing restart files and exiting
+ -----------------------------------
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: `libgeom.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+make: `libfluid.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -I/home/jmom1n15/Lotus/solver/src/oop -I/home/jmom1n15/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/jmom1n15/Lotus/solver/src/oop/. -L/home/jmom1n15/Lotus/solver/src/geom/. -lfluid -lgeom
+ Setting up the grid, body and fluid
+ -----------------------------------
+composite(1560.0)=1536
+  products :3*2**9
+composite(1560.0)=1536
+  products :3*2**9
+composite(80.0)=80
+  products :5*2**4
+ Stretched grid sections:
+  negative: r= 0.7%, h_max=14.6
+  positive: r= 0.6%, h_max=9.9
+ grid symmetry:  F
+ Stretched grid sections:
+  negative: r= 0.4%, h_max=6.5
+  positive: r= 0.4%, h_max=6.5
+ grid symmetry:  T
+ Starting time update loop
+ -----------------------------------
+Time:          0.000. Thrust:         40.105
+Time:          1.000. Thrust:         -0.163
+Time:          2.001. Thrust:         -0.150
+Time:          3.000. Thrust:         -0.127
+Time:          4.000. Thrust:         -0.129
+Time:          5.000. Thrust:         -0.137
+Time:          6.001. Thrust:         -0.148
+Time:          7.000. Thrust:         -0.142
+ Loop complete: writing restart files and exiting
+ -----------------------------------
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: `libgeom.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/geom'
+make: Entering directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+make: `libfluid.a' is up to date.
+make: Leaving directory `/mainfs/home/jmom1n15/Lotus/solver/src/oop'
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -I/home/jmom1n15/Lotus/solver/src/oop -I/home/jmom1n15/Lotus/solver/src/geom/geom_lib_include -c lotus.f90
+mpif90 -cpp -DMPION  -Ofast -funroll-loops --param max-unroll-times=4  -o lotus lotus.o -L/home/jmom1n15/Lotus/solver/src/oop/. -L/home/jmom1n15/Lotus/solver/src/geom/. -lfluid -lgeom
+ Setting up the grid, body and fluid
+ -----------------------------------
+composite(3120.0)=3072
+  products :3*2**10
+composite(3120.0)=3072
+  products :3*2**10
+composite(160.0)=160
+  products :5*2**5
+ Stretched grid sections:
+  negative: r= 0.3%, h_max=14.6
+  positive: r= 0.3%, h_max=9.9
+ grid symmetry:  F
+ Stretched grid sections:
+  negative: r= 0.2%, h_max=6.5
+  positive: r= 0.2%, h_max=6.5
+ grid symmetry:  T
+ Starting time update loop
+ -----------------------------------
+Time:          0.000. Thrust:         98.125
+Time:          1.000. Thrust:         -0.060
+Time:          2.000. Thrust:         -0.155
+Time:          3.001. Thrust:         -0.151
+Time:          4.001. Thrust:         -0.160
+Time:          5.001. Thrust:         -0.157
+Time:          6.000. Thrust:         -0.160
+Time:          7.001. Thrust:         -0.158
+ Loop complete: writing restart files and exiting
+ -----------------------------------
+Number of proccessors :256
+Run folder            :/ssdfs/users/jmom1n15/tidy_res_test/52x52/130
+No read folder
+Folder /ssdfs/users/jmom1n15/tidy_res_test/52x52/130 exists!
+Moving contents to trash
+Setting up in /ssdfs/users/jmom1n15/tidy_res_test/52x52/130
+No postprocessing set up
+No stopping criteria, the simulation will run its course
+Making executable 
+Finished executable 
+Running executable 
+Run all python files for postprocessing
+Popping back up
+Number of proccessors :256
+Run folder            :/ssdfs/users/jmom1n15/tidy_res_test/52x52/260
+No read folder
+Folder /ssdfs/users/jmom1n15/tidy_res_test/52x52/260 exists!
+Moving contents to trash
+Setting up in /ssdfs/users/jmom1n15/tidy_res_test/52x52/260
+No postprocessing set up
+No stopping criteria, the simulation will run its course
+Making executable 
+Finished executable 
+Running executable 
+Run all python files for postprocessing
+Popping back up
+Number of proccessors :256
+Run folder            :/ssdfs/users/jmom1n15/tidy_res_test/52x52/520
+No read folder
+Folder /ssdfs/users/jmom1n15/tidy_res_test/52x52/520 exists!
+Moving contents to trash
+Setting up in /ssdfs/users/jmom1n15/tidy_res_test/52x52/520
+No postprocessing set up
+No stopping criteria, the simulation will run its course
+Making executable 
+Finished executable 
+Running executable 
+Run all python files for postprocessing
+Popping back up
+Number of proccessors :256
+Run folder            :/ssdfs/users/jmom1n15/tidy_res_test/52x52/1040
+No read folder
+Folder /ssdfs/users/jmom1n15/tidy_res_test/52x52/1040 exists!
+Moving contents to trash
+Setting up in /ssdfs/users/jmom1n15/tidy_res_test/52x52/1040
+No postprocessing set up
+No stopping criteria, the simulation will run its course
+Making executable 
+Finished executable 
+Running executable 
+Run all python files for postprocessing
+Popping back up
+Number of proccessors :256
+Run folder            :/ssdfs/users/jmom1n15/tidy_res_test/52x52/2080
+No read folder
+Folder /ssdfs/users/jmom1n15/tidy_res_test/52x52/2080 exists!
+Moving contents to trash
+Setting up in /ssdfs/users/jmom1n15/tidy_res_test/52x52/2080
+No postprocessing set up
+No stopping criteria, the simulation will run its course
+Making executable 
+Finished executable 
+Running executable 
+Run all python files for postprocessing
+Popping back up
+==============================================================================
+Running epilogue script on ruby049.
+
+Submit time  : 2022-08-16T09:05:56
+Start time   : 2022-08-16T09:06:34
+End time     : 2022-08-17T21:37:37
+Elapsed time : 1-12:31:03 (Timelimit=2-12:00:00)
+
+Job ID: 1664093
+Cluster: i5
+User/Group: jmom1n15/mm
+State: COMPLETED (exit code 0)
+Nodes: 4
+Cores per node: 64
+CPU Utilized: 389-01:23:03
+CPU Efficiency: 99.88% of 389-12:28:48 core-walltime
+Job Wall-clock time: 1-12:31:03
+Memory Utilized: 361.91 GB (estimated maximum)
+Memory Efficiency: 40.21% of 900.00 GB (3.52 GB/core)
+

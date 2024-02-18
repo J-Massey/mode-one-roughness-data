@@ -1,0 +1,15 @@
+#!/bin/bash
+
+#SBATCH --ntasks=1024
+#SBATCH --nodes=16
+#SBATCH --partition=amd
+#SBATCH --job-name=convergence16x16
+#SBATCH --time=60:00:00
+
+echo "Starting calculation at $(date)"
+echo "---------------------------------------------------------------"
+
+module purge
+module load python openmpi/4.0.5/amd
+
+python3 run.py

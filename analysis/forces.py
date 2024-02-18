@@ -63,7 +63,7 @@ def thrust_plt_helper(ax: Axes, re_idx: int) -> None:
     zet = interp1d(lam, zeta)(1 / k_lams)
     # Get the force for the given roughness wavelength
     force = get_forces(k_lams, res[re_idx])
-    # [print(f"${f:.4f}$") for f in force]
+    [print(f"${f:.4f}$") for f in force]
 
     # Plot the force as a function of zeta
     ax.plot(
@@ -163,8 +163,8 @@ def rms_lift_plt_helper(ax: Axes, re_idx: int) -> None:
 
 
 def plot_power(ax: Axes) -> None:
-    ax.set_xlabel(r"$\zeta$")
-    ax.set_ylabel(r"$\overline{C_P}$")
+    ax.set_xlabel(r"wavespeed")
+    ax.set_ylabel(r"power")
     ax.set_xlim(1, 2.35)
     # ax.set_ylim(0, 0.5)
 
@@ -181,7 +181,7 @@ def power_plt_helper(ax: Axes, re_idx: int) -> None:
     zet = interp1d(lam, zeta)(1 / k_lams)
     # Get the force for the given roughness wavelength
     force = get_forces(k_lams, res[re_idx], f="cp", d="")
-    # [print(f"${f:.3f}$") for f in force]
+    [print(f"${f:.3f}$") for f in force]
 
     # Plot the force as a function of zeta
     ax.plot(
@@ -302,30 +302,85 @@ def plot_wrapper():
     fig, axd = plt.subplot_mosaic([[0, 1],
                                [2, 3]],
                               figsize=(5., 5.), layout="constrained")
-    plot_power(axd[0]) # type: ignore
-    plot_lift_rms(axd[1]) # type: ignore
-    plot_thrust(axd[2]) # type: ignore
-    plot_thrust_rms(axd[3]) # type: ignore
+    fig, axd = plt.subplots(figsize=(4., 3.))
+    plot_power(axd) # type: ignore
+    # plot_lift_rms(axd[1]) # type: ignore
+    # plot_thrust(axd[2]) # type: ignore
+    # plot_thrust_rms(axd[3]) # type: ignore
 
     # legend1 = axd['lower'].legend(handles=re_legend(), loc=4) # type: ignore
     # legend2 = axd['lower'].legend(handles=smooth_rough_legend(), loc=1) # type: ignore
     # axd['lower'].add_artist(legend1) # type: ignore
 
     plt.savefig(
-        f"{os.getcwd()}/analysis/figures/figure8.pdf", bbox_inches="tight", dpi=300
+        f"{os.getcwd()}/analysis/figures/cp_discovor.png", bbox_inches="tight", dpi=400
     )
 
 
+def plot_phase_portrait():
+    for idx, re in enumerate(res):
+        fig, ax = plt.subplots(figsize=(3., 3.))
+        ax.set_xlabel(r"$C_L$")
+        ax.set_ylabel(r"$C_T$")
+        ax.set_xticks([])
+        ax.set_yticks([])
+        
+        t, p = read_forces(
+            f"{Path.cwd()}/outer-scaling/{re}/12-2d/fort.9",
+            interest="p",
+            direction="y",
+        )
+        pow = p[t > 2]
+        t, e = read_forces(
+            f"{Path.cwd()}/outer-scaling/{re}/12-2d/fort.9",
+            interest="p",
+            direction="x",
+        )
+        e = e[t > 2]
+        ax.plot(pow, e, color=sns.color_palette("colorblind")[idx], ls="-", label=f"$Re={re//1000},000$")
+        ax.legend()
+        plt.savefig(f"{os.getcwd()}/analysis/figures/phase{re}.pdf", bbox_inches="tight", dpi=300
+    )
+
+def plot_phase_100k():
+    fig, ax = plt.subplots(figsize=(3., 3.))
+    ax.set_xlabel(r"$C_L$")
+    ax.set_ylabel(r"$C_T$")
+    ax.set_xticks([])
+    ax.set_yticks([])
+
+    t, p = read_forces(
+        f"/home/masseyj/Workspace/thicc-swimmer/data/plate/4096/fort.9",
+        interest="p",
+        direction="y",
+    )
+    pow = p[t > 2]
+    t, e = read_forces(
+        f"/home/masseyj/Workspace/thicc-swimmer/data/plate/4096/fort.9",
+        interest="p",
+        direction="x",
+    )
+    e = e[t > 2]
+    print(pow, e)
+    ax.plot(pow, e, color=sns.color_palette("colorblind")[3], ls="-", label=r"$Re=100,000$")
+    ax.legend()
+    plt.savefig(f"{os.getcwd()}/analysis/figures/phase100000.pdf", bbox_inches="tight", dpi=300
+)
+
+
 def main():
+    # plot_phase_portrait()
     plot_wrapper()
 
 
 if __name__ == "__main__":
     cwd = os.getcwd()
     zeta, lam = np.load(f"{Path.cwd()}/analysis/zeta_lambda.npy", allow_pickle=True)
-    markers = ['^', 'p', 'o']
-    res = [6000, 12000, 24000]
+    # markers = ['^', 'p', 'o']
+    # res = [6000, 12000, 24000]
     res = [12000]
     k_lams = np.arange(0, 56, 4)
-    main()
+    # force = get_forces(k_lams, 24000, f="p", d="x", dim="")
+    # [print(f"${f:.3f}$") for f in force]
+    plot_wrapper()
     
